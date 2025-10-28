@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회원가입</title>
+</head>
+
+<style>
+
+* {
+  margin:0;
+  padding:0;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox  */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+
+  hr {
+    border:1px solid #ededed;
+  }
+
+  input {
+    border:1px solid #ededed;
+    border-radius: 8px;
+    padding:8px 12px;
+    outline: none;
+  }
+
+  label {
+    display: block;
+  }
+
+  .mb_10 {
+    margin-bottom:10px;
+  }
+  .sex_box {display: flex; align-items: center; gap:10px;}
+   img {max-width:100%; display: block;}
+   .cat_img {width:300px; margin:30px 0 30px 30px}
+   .form_write {padding-left:30px; width:100%; max-width:800px;}
+   h1 {padding:10px 20px;}
+</style>
+
+<body>
+  <div class="wrap">
+    <h1>회원가입</h1>
+    <hr>
+  
+    <div class="cat_img">
+      <img src="../img/cat.jpg" alt="">
+    </div>
+    
+  
+    <div class="form_write">
+      <form action="#" method="#">
+        <label class="mb_10">
+          <span>아이디 : </span>
+          <input type="text" placeholder="아이디를 입력하세요">
+        </label>
+  
+        <label class="mb_10">
+          <span>비밀번호 : </span>
+          <input type="password" placeholder="비밀번호를 입력하세요">
+        </label>
+  
+        <label class="mb_10">
+          <span>비밀번호 확인 : </span>
+          <input type="password" placeholder="비밀번호를 다시한번 입력하세요">
+        </label>
+  
+  
+        <label class="mb_10">
+          <span>이메일 : </span>
+          <input type="email" placeholder="이메일을 입력하세요.">
+        </label>
+  
+        <div class="sex_box mb_10">
+          <label>
+            <span>성별 : </span>
+            <input type="radio" name="sex" checked>
+            <span>남성</span>
+          </label>
+    
+          <label>
+            <input type="radio" name="sex">
+            <span>여성</span>
+          </label>
+        </div>
+  
+  
+        <label class="mb_10">
+          <span>전화번호 : </span>
+          <input type="number" placeholder="010"> <span> - </span> <input type="number" placeholder="1234"> <span> - </span> <input type="number" placeholder="5678">
+        </label>
+  
+        <button type="submit">회원가입</button>
+  
+      </form>
+  
+    </div>
+  
+
+
+
+  </div>
+
+
+</body>
+</html>

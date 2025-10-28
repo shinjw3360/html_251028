@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+
+<style>
+  body { background-color: #212121; }
+  ol, li { color:#fff;}
+
+  a {text-decoration: none; }
+  div {margin-bottom:30px;}
+
+
+  ol {
+    margin-left:30px;
+  }
+  ol li {
+    font-size:40px;
+    font-weight: 700;
+
+  }
+
+  ol li:nth-child(even) {
+    color:red;
+  }
+
+  ol {
+    list-style: none;
+    padding:0;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap:20px;
+  }
+
+  ol li {
+    position: relative;
+    padding-right:40px;
+  }
+
+  ol li:last-child::after {
+    padding-right:0px;
+    content:"";
+  }
+  ol li::after {
+    position: absolute;
+    top:50%;
+    right:0;
+    transform: translateY(-50%);
+    content:"/";
+  }
+
+  ol li:nth-child(3n) {
+    color:green;
+  }
+
+  ol li:nth-child(1), ol li:nth-child(10) {
+    color:#fff;
+  }
+  div a span {
+    display: inline-block;
+    font-size:30px;
+    font-weight: 700;
+  }
+
+  .naver_color {color:#03A94D;}
+  .google_color {color:#e8eaed;  }
+  .daum_color {color:#f4dc00;}
+</style>
+<body>
+  <!-- 
+    div를 3개 만들어 
+    naver, google, daum 사이트에 연결되게 하고
+    naver => 초록색 / 각자 다른색 글자로 만들어 주기
+  -->
+
+
+
+  
+
+  <div>
+    <a href="http://www.naver.com" target="_blank"><span class="naver_color">네이버</span></a>
+  </div>
+  <div>
+    <a href="http://www.google.com" target="_blank"><span class="google_color">구글</span></a>
+  </div>
+  <div>
+    <a href="http://www.daum.net" target="_blank"><span class="daum_color">다음</span></a>
+  </div>
+
+  <ol>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+    <li>10</li>
+  </ol>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+  <style>
+    * {
+      margin:0;
+      padding:0;
+    }
+
+    body{
+      box-sizing: border-box;
+      background: rgb(12, 239, 211);
+    }
+
+
+  @font-face {
+    font-family: 'Roboto';
+    src: url('../font/Roboto-Regular.ttf') format('ttf');
+    font-weight: 400;
+
+  }
+
+  @font-face {
+    font-family: 'Roboto';
+    src: url('../font/Roboto-Medium.ttf') format('ttf');
+    font-weight: 500;
+  }
+
+  @font-face {
+    font-family: 'Roboto';
+    src: url('../font/Roboto-SemiBold.ttf') format('ttf');
+    font-weight: 600;
+  }
+
+  @font-face {
+    font-family: 'Roboto';
+    src: url('../font/Roboto-Bold.ttf') format('ttf');
+    font-weight: 700;
+  }
+  ul, li {
+    list-style: none;
+  }
+
+  .wrap {
+    width:100%;
+    max-width:767px;
+    margin:100px auto 0;
+    position: relative;
+    z-index:100;
+  }
+
+
+
+
+    .title {
+      font-size:40px;
+      font-weight: 700;
+      font-family: "Roboto";
+
+      text-align: center;
+    }
+
+    .sub_title {
+      font-size:20px;
+      font-weight: 700;
+      font-family: "Roboto";
+      text-align: center;
+      margin: 20px 0; 
+    }
+
+    .img_txt {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom:30px;
+    }
+
+    .img_box {width:100%; max-width:767px; height:510px; overflow: hidden; position: relative;}
+    .img_box img {width:100%; height:100%; position: absolute; top:0; left:0;}
+    .txt_list {background: #fff; padding:20px; text-align: center;}
+    .txt_list button {border:none; background: none; outline: none; color:red; cursor:pointer; font-weight: 500; font-family: "Roboto";}
+    .txt_list li {margin-bottom:40px; font-family: "Roboto"; font-weight: 700;}
+    .txt_list li:last-child {margin-bottom:0;}
+    .txt_list span:nth-child(1) { font-size:10px; text-decoration: line-through;}
+    .txt_list span:nth-child(2) { font-size:10px; color:blue}
+    .bamin {position: absolute; bottom:-0.5%; right:-57%; z-index:-1;}
+    .bamin img {width:750px; height:750px;}
+  </style>
+    <div class="wrap">
+      <h1 class="title"> 배달의 민족</h1>
+      <p class="sub_title">넌 배달할 때가 제일 멋있어</p>
+
+
+      <div class="img_txt">
+        <div class="img_box">
+          <img src="../img/cheese-1869708_1280.jpg" alt="음식사진">
+        </div>
+        <div class="txt_box">
+          <ul class="txt_list">
+            <li>여기는 음식사진 타이틀 입니다.</li>
+            <li>여기는 음식사진에 대한 설명 부분입니다.</li>
+            <li><span>30,000원</span><span>17,000원</span></li>
+            <li><button type="button">바로 결제</button></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="img_txt">
+        <div class="img_box">
+          <img src="../img/orange.jpg" alt="음식사진">
+        </div>
+        <div class="txt_box">
+          <ul class="txt_list">
+            <li>여기는 음식사진 타이틀 입니다.</li>
+            <li>여기는 음식사진에 대한 설명 부분입니다.</li>
+            <li><span>30,000원</span><span>17,000원</span></li>
+            <li><button type="button">바로 결제</button></li>
+
+          </ul>
+        </div>
+      </div>
+
+      <div class="img_txt">
+        <div class="img_box">
+          <img src="../img/pretzels.jpg" alt="음식사진">
+        </div>
+        <div class="txt_box">
+          <ul class="txt_list">
+            <li>여기는 음식사진 타이틀 입니다.</li>
+            <li>여기는 음식사진에 대한 설명 부분입니다.</li>
+            <li><span>30,000원</span><span>17,000원</span></li>
+            <li><button type="button">바로 결제</button></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="img_txt">
+        <div class="img_box">
+          <img src="../img/snack.jpg" alt="음식사진">
+        </div>
+        <div class="txt_box">
+          <ul class="txt_list">
+            <li>여기는 음식사진 타이틀 입니다.</li>
+            <li>여기는 음식사진에 대한 설명 부분입니다.</li>
+            <li><span>30,000원</span><span>17,000원</span></li>
+            <li><button type="button">바로 결제</button></li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="img_txt">
+        <div class="img_box">
+          <img src="../img/bowl.jpg" alt="음식사진">
+        </div>
+        <div class="txt_box">
+          <ul class="txt_list">
+            <li>여기는 음식사진 타이틀 입니다.</li>
+            <li>여기는 음식사진에 대한 설명 부분입니다.</li>
+            <li><span>30,000원</span><span>17,000원</span></li>
+            <li><button type="button">바로 결제</button></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bamin">
+        <img src="../img/club.2196419a.gif" alt="">
+
+      </div>
+    </div> <!-- wrap -->
+
+
+
+<body>
+  
+</body>
+</html>

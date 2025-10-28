@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+label { 
+  display: block;
+  margin-bottom:10px;
+}
+
+input {
+  outline: none;
+}
+
+.color_label input {
+  background-color: skyblue;
+}
+
+</style>
+<body>
+  <!-- 속성 선택자 -->
+  <form action="#" method="#">
+    <label class="color_label">
+      <span>User ID </span>
+      <input type="text" placeholder="8자 이상">
+    </label>
+
+    <label>
+      <span>User password </span>
+      <input type="password" placeholder="8자 이상">
+    </label>
+    
+    <label>
+      <span>User pin </span>
+      <input type="password" placeholder="숫자만">
+    </label>
+
+    <div>
+      <button type="button">일반버튼</button>
+      <button type="submit">로그인</button>
+      <button type="reset">작성취소</button>
+    </div>
+
+  </form>
+
+
+</body>
+</html>

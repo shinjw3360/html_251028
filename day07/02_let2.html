@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>자바스크립트 변수 사용</h1>
+  <!-- 
+    변수 : 값을 담고 있는 메모리 공간의 이름 
+    java => 자료형 변수명 = 값;
+    자바스크립트의 변수는 선언하는 역할 만 함. (자료형이 없음)
+    하나의 변수에 아무 자료나 들어갈 수 있음.
+    타입에 맞는 변수를 만드는건 타입스크립트
+    자바스크립트의 문자 표현은 '', "",`` 가능하다.
+    '',"" => 문자, html의 속성 ""
+    `` 변수를 같이 사용이 가능하다.
+     - ''+변수 
+     - `값 ${변수}`
+
+     자바의 변수는 주로 var, let, const
+      - var : ES6 ver. 이후로 권장하지 않음.
+        중복 선언이 가능, 재할당 가능
+        var name = 'hong';
+        var name = 'kim'; => 중복선언 가능
+
+      - let : java에서 지역변수 개념
+        중복 선언이 불가능, 대신 재 할당이 가능
+        let name = 'hong';
+        let name = 'kim'; 중복 선언 불가능
+        name = 'kim' => 재 할당 가능
+
+      - const : 객체, 함수, 규칙, 참조 정의시 사용 (고정된 값을 사용 할 때)
+        중복선언 불가능, 재할당 불가능
+
+        변수의 사용범위(scope : 스코프) : {   }
+        {   } 를 벗어나면 재선언 가능
+  -->
+  
+  <script>
+    let num;
+    console.log(name)
+
+    // const num2; // 재할당이 불가능하기 때문에 선언만 불가능
+    let mtFirst = '123';
+    console.log(mtFirst)
+    //const input = `<input type="text"> ;
+    console.log(`내가 선언한 변수 ${mtFirst}`);
+    console.log(`내가 선언한 변수',mtFirst}`);
+
+    let firstName = 'kim';
+    let lastName = 'gildong';
+    let age = 20
+    console.log('name : '+firstName+lastName+' / age:' + age);
+
+    //변수선언 없이 사용이 가능하고 선언없이 사용하면 전역에 영향을 미치므로 가급적 사용X
+    //상수 : 한번 선언되면 변경 할 수 없는 값
+    // java final 같은 의미 const 대문자 표기
+    //type of : 해당 변수의 타입을 확인 
+
+  </script>
+
+</body>
+</html>

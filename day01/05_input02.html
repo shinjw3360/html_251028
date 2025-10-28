@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  input, textarea {
+    outline: none;
+  }
+label{
+  display: block;
+}
+textarea {
+  resize:none;
+  display: block;
+}
+
+input:read-only {
+  cursor:inherit;
+}
+
+.onfile {
+  margin-bottom:20px;
+}
+
+.form_write label {margin-bottom:20px;}
+
+.notice_box { display: flex; align-items: center;}
+ 
+</style>
+
+
+<body>
+  <div class="wrap">
+    <h1>공지사항</h1>
+
+    <div class="form_write">
+      <form action="#" method="#">
+        <label>
+          <span>작성자</span>
+          <input type="text" placeholder="이름을 입력하세요.">
+        </label>
+  
+        <div class="notice_box">
+          <label>
+            <span>제목&nbsp;&nbsp;&nbsp;</span>
+            <input type="text" placeholder="제목을 입력하세요.">
+          </label>
+          <label>
+            <input type="checkbox" name="notice">
+            <span>공지</span>
+          </label>
+        </div>
+        <label>
+          <span class="text_title">내용</span>
+          <textarea rows="10" cols="30" placeholder="내용을 입력하세요"></textarea>
+        </label>
+        
+        <hr>
+
+        <h2>파일 첨부</h2>
+        <div class="onfile">
+          <input type="text" readonly>
+          <input type="file">
+        </div>
+        <div class="onfile">
+          <input type="text" readonly>
+          <input type="file">
+        </div>
+        <div class="onfile">
+          <input type="text" readonly>
+          <input type="file">
+        </div>
+        
+        <div>
+          <button type="reset">취소</button>
+          <button type="submit">완료</button>
+        </div>
+      </form>
+    </div>
+
+
+
+
+  </div>
+</body>
+</html>

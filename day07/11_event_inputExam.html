@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  ul, li {
+    list-style: none;
+  }
+</style>
+<body>
+  <!-- 이름 국어 영어 수학 점수를 입력받고 계산버튼을 누르면 ul>li 점수를 출력하고 합계와 평균도 같이 출력-->
+  <ul>
+    <li>
+      <input type="text" id="name" placeholder="이름">
+    </li>
+    <li>
+      <input type="number" id="book" placeholder="국어">
+    </li>
+    <li>
+      <input type="number" id="eng" placeholder="영어" >
+    </li>
+    <li>
+      <input type="number" id="math" placeholder="수학" >
+    </li>
+    <li>
+      <button type="button" onclick="calc()">계산하기</button>
+    </li>
+  </ul>
+  
+  
+
+  <h1 id="total">총 점수 <span> </span></h1>
+  <h1 id="plus">합계 <span> </span></h1>
+  <h1 id="avg">평균 <span> </span></h1>
+
+
+<script>
+  function calc() {
+    const name = document.getElementById('name').value.trim();
+    const k = Number(document.getElementById('book').value);
+    const e = Number(document.getElementById('eng').value);
+    const m = Number(document.getElementById('math').value);
+
+    if ([k, e, m].some(n => !Number.isFinite(n))) {
+      alert('점수는 숫자로 입력하세요.');
+      return;
+    }
+
+    // 각 과목 1 ~ 100 범위 체크
+    for (const [label, n] of [['국어', k], ['영어', e], ['수학', m]]) {
+      if (n < 1 || n > 100) {
+        alert(`${label} 점수는 1부터 100 사이여야 합니다.`);
+        return;
+      }
+    } 
+    //소수점 표시하는 방법 .toFixed(2) : 소수 2자리로 표현
+    //Math.round() : 반올림 후 정수로 리턴
+      const sum = k + e + m;
+      const avg = (sum / 3).toFixed(2);
+      document.querySelector('#total span').textContent = sum;
+      document.querySelector('#plus span').textContent = sum;
+      document.querySelector('#avg  span').textContent = avg;
+    }
+</script>
+
+
+</body>
+</html>

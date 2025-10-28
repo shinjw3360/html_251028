@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <fieldset>
+    <legend>할인율 구하기</legend>
+    가격 : <input type="" id="price">원 <br>
+    할인 : <input type="" id="rate">% <br>
+    <button onclick="dc_amount()">할인율 계산</button> 
+
+    <!-- 가격과 할인율에 따른 지분율 -->
+    <!-- 가격 : / 할인율 : / 할인금액 / 지불금액 : -->
+    <h3 id="result"></h3>
+
+    <h1 id="total_price">총 가격 <span> </span></h1>
+    <h1 id="total_dc">할인율(%)<span> </span></h1>
+    <h1 id="total_dc_amount">할인 금액<span> </span></h1>
+    <h1 id="total_dc_won">지불 금액<span> </span></h1>
+
+  </fieldset>
+
+  <script>
+    function dc_amount() {
+      const dc_price =  Number(document.getElementById('price').value);
+      const dc_rate = Number(document.getElementById('rate').value);
+
+      
+      const dcwon = dc_price * (dc_rate/100) ;
+      const total_dc = dc_price - dcwon;
+      
+      document.querySelector('#total_price span').textContent = dc_price;
+      document.querySelector('#total_dc span').textContent = dc_rate;
+      document.querySelector('#total_dc_amount span').textContent = dcwon;
+      document.querySelector('#total_dc_won span').textContent = total_dc;
+    }
+
+  </script>
+
+
+</body>
+</html>

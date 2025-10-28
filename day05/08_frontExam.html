@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+  <style>
+  @font-face {
+    font-family: 'Roboto';
+    src: url('../font/Roboto-Regular.ttf') format('ttf');
+  }
+  @font-face {
+    font-family: 'Roboto';
+    src: url('../font/Roboto-Medium.ttf') format('ttf');
+  }
+  @font-face {
+    font-family: 'Roboto';
+    src: url('../font/Roboto-SemiBold.ttf') format('ttf');
+  }
+  @font-face {
+    font-family: 'Roboto';
+    src: url('../font/Roboto-Bold.ttf') format('ttf');
+  }
+  
+  @font-face {
+    font-family: 'Lato';
+    src: url('../font/Lato-Bold.ttf') format('ttf');
+  }
+
+
+    * {margin:0; padding:0;}
+    body {box-sizing: border-box; font-family: "Lato";}
+    a {text-decoration: none; color:#333;}
+    ul, li {list-style: none;}
+    header {display: flex; align-items: center; justify-content: space-between; padding:0 20px; margin:20px 20px 30px;}
+    .left_flex {display: flex; color:#333; align-items: center; gap:10px; cursor:pointer;}
+    .left_flex img {width:30px; height:30px;}
+    .left_flex span {font-weight: 700; font-size:30px;}
+
+    .nav { display: flex; align-items: center; gap:20px; }
+    .nav a {font-weight: 700; font-size:20px; }
+    .nav a:hover {text-decoration: underline; color:red; text-underline-offset : 10px;}
+    .top_img {background: url("../img/orange.jpg"); background-position: center; background-size:cover; background-repeat: no-repeat; width:100%; height:500px;}
+    .height_300 {height:250px; width:250px;}
+    .content p {text-align: center; font-size:50px; font-weight: 700; margin-top:100px;}
+    .content_list {width:100%; max-width:800px; margin:50px auto 0; display: grid; grid-template-columns: repeat(3, 1fr);gap:50px;}
+    .content_list_box {width:250px; height:250px; position: relative;}
+    .content_list_box span.desc_title {position: absolute; width:100%; bottom:0; left:0; background: #333; color:#fff; text-align: center; font-weight: 600; display: none;}
+    .content_list_box a {display: block; height:100%;}
+    .content_list_box img {width:100%; height:100%; object-fit: cover; transition: 3s;}
+    .content_list_box li.desc_title_box {height:200px; overflow: hidden; border-radius: 10px; position: relative;}
+    .content_list_box .won {text-align: center; display: inline-block; width:100%;}
+    .won_title {text-align: center; margin-top:10px; font-weight: 700;}
+    .won {font-weight: 700;}
+    .content_list_box a:hover span.desc_title {display: block;}
+    .content_list_box a:hover img {transform: scale(1.5);}
+    footer {width:100%; margin:100px auto 50px;}
+    .sns {display: flex; align-items: center; gap:40px; justify-content: center; max-width:800px; padding-left:40px; margin:0 auto;}
+    .sns img {width:20px; height:20px; display: block;}
+    .sns a {display: block;}
+  </style>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="left_flex" onclick="location.href='08_frontExam.html'">
+        <img src="../img/bag.svg" alt="">
+        <span>SIMPLE SHOP</span>
+      </div>
+
+      <ul class="nav">
+        <li> <a href="#">Content</a> </li>
+        <li> <a href="#">Shop</a> </li>
+        <li> <a href="">Cart</a> </li>
+        <li> <a href="./01_login.html"">Login</a> </li>
+      </ul>
+    </header>
+
+    <div class="top_img"> </div>
+
+    <div class="content">
+      <p>Our New Product</p>
+    </div>
+
+    <div class="content_list">
+      <div class="height_300">
+        <ul class="content_list_box">
+          <li class="desc_title_box">
+            <a href="#">
+              <img src="../img/pretzels.jpg" alt=""> 
+              <span class="desc_title">여기는 상품명입니다.</span>
+            </a>
+          </li>
+          <li> 
+            <p class="won_title">음식 사진</p>
+            <span class="won">999,999,999원</span> 
+          </li>
+        </ul>
+      </div>
+
+      <div class="height_300">
+        <ul class="content_list_box">
+          <li class="desc_title_box">
+            <a href="#">
+              <img src="../img/cafe.jpg" alt=""> 
+              <span class="desc_title">여기는 상품명입니다.</span>
+            </a>
+          </li>
+          <li> 
+            <p class="won_title">음식 사진</p>
+            <span class="won">999,999,999원</span> 
+          </li>
+        </ul>
+      </div>      
+
+
+      <div class="height_300">
+        <ul class="content_list_box">
+          <li class="desc_title_box">
+            <a href="#">
+              <img src="../img/bowl.jpg" alt=""> 
+              <span class="desc_title">여기는 상품명입니다.</span>
+            </a>
+          </li>
+          <li> 
+            <p class="won_title">음식 사진</p>
+            <span class="won">999,999,999원</span> 
+          </li>
+        </ul>
+      </div>
+      
+      <div class="height_300">
+        <ul class="content_list_box">
+          <li class="desc_title_box">
+            <a href="#">
+              <img src="../img/cheese-1869708_1280.jpg" alt=""> 
+              <span class="desc_title">여기는 상품명입니다.</span>
+            </a>
+          </li>
+          <li> 
+            <p class="won_title">음식 사진</p>
+            <span class="won">999,999,999원</span> 
+          </li>
+        </ul>
+      </div>
+      
+      <div class="height_300">
+        <ul class="content_list_box">
+          <li class="desc_title_box">
+            <a href="#">
+              <img src="../img/snack.jpg" alt=""> 
+              <span class="desc_title">여기는 상품명입니다.</span>
+            </a>
+          </li>
+          <li> 
+            <p class="won_title">음식 사진</p>
+            <span class="won">999,999,999원</span> 
+          </li>
+        </ul>
+      </div>
+      
+      <div class="height_300">
+        <ul class="content_list_box">
+          <li class="desc_title_box">
+            <a href="#">
+              <img src="../img/burgers.jpg" alt=""> 
+              <span class="desc_title">여기는 상품명입니다.</span>
+            </a>
+          </li>
+          <li> 
+            <p class="won_title">음식 사진</p>
+            <span class="won">999,999,999원</span> 
+          </li>
+        </ul>
+      </div>
+      
+      <div class="height_300">
+        <ul class="content_list_box">
+          <li class="desc_title_box">
+            <a href="#">
+              <img src="../img/cake.jpg" alt=""> 
+              <span class="desc_title">여기는 상품명입니다.</span>
+            </a>
+          </li>
+          <li> 
+            <p class="won_title">음식 사진</p>
+            <span class="won">999,999,999원</span> 
+          </li>
+        </ul>
+      </div>
+      
+      <div class="height_300">
+        <ul class="content_list_box">
+          <li class="desc_title_box">
+            <a href="#">
+              <img src="../img/meatloaf.jpg" alt=""> 
+              <span class="desc_title">여기는 상품명입니다.</span>
+            </a>
+          </li>
+          <li> 
+            <p class="won_title">음식 사진</p>
+            <span class="won">999,999,999원</span> 
+          </li>
+        </ul>
+      </div>
+      
+      <div class="height_300">
+        <ul class="content_list_box">
+          <li class="desc_title_box">
+            <a href="#">
+              <img src="../img/steak.jpg" alt=""> 
+              <span class="desc_title">여기는 상품명입니다.</span>
+            </a>
+          </li>
+          <li> 
+            <p class="won_title">음식 사진</p>
+            <span class="won">999,999,999원</span> 
+          </li>
+        </ul>
+      </div>      
+    </div> <!-- content_list -->
+    <footer>
+      <ul class="sns">
+        <li> <a href="void(0);" onclick="alert('준비중입니다.');return false;"> <img src="../img/instagram.svg" alt=""></a> </li>
+        <li> <a href="void(0);" onclick="alert('준비중입니다.');return false;"> <img src="../img/twitter.svg" alt=""></a> </li>
+        <li> <a href="void(0);" onclick="alert('준비중입니다.');return false;"> <img src="../img/facebook.svg" alt=""></a> </li>
+      </ul>
+    </footer>
+  </div>
+</body>
+</html>

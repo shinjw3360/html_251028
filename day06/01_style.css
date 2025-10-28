@@ -1,0 +1,222 @@
+@charset "utf-8";
+
+*{
+  margin:0;
+  padding:0;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "noto";
+}
+
+ul, li, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color:#333;
+}
+
+@font-face {
+  font-family: 'noto';
+  src: url('../font/NotoSansKR-Bold.ttf') format('ttf');
+
+}
+
+@font-face {
+  font-family: 'noto';
+  src: url('../font/NotoSansKR-Medium.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'noto';
+  src: url('../font/NotoSansKR-Regular.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'noto';
+  src: url('../font/NotoSansKR-Light.ttf') format('ttf');
+}
+.mySwiper .swiper-button-next, .mySwiper .swiper-button-prev {
+  color:#fff;
+}
+.mySwiper img {max-width:100%;}
+.one_slide {position: relative; }
+.mySwiper .swiper-slide {height:unset;}
+.mySwiper .swiper_img {height:100%;}
+.mySwiper .swiper_img img {height:100%;}
+.one_slide .text_box {position: absolute; top:50%; left:0; right:0; color:#fff; width:100%; max-width:1360px; margin:auto; transform: translateY(-50%);}
+.one_slide .text_box p {font-size:54px; font-weight: 700; margin-bottom:24px;}
+.one_slide .text_box span {font-size:24px; font-weight: 700;}
+.mySwiper .swiper_page {color:#fff; font-size:20px; font-weight: 700; display: flex; justify-content: flex-end; }
+.mySwiper{position:relative}
+.swiper_controll{position:absolute; z-index:10; right:280px;bottom:160px;display:flex;gap:8px;padding:6px 8px;border-radius:999px;background:rgba(0,0,0,.5);color:#fff}
+.swiper_page{display:flex;gap:6px}
+.swiper_state{border:0;border-radius:50%;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center}
+.swiper_page{display:flex;gap:6px}
+.mySwiper .swiper_state_icon{width:30px; display: block; flex:none; cursor:pointer;}
+.main_swiper { position: relative; }
+.timer_wrap {position: absolute; width:100%; max-width:1360px; bottom:50px; left:0; right:0; margin:auto; background-color: #fff; z-index:10; display: flex; align-items: center; justify-content: space-between; height:80px;}
+.timer_wrap .timer {display: flex; justify-content: space-around; align-items: center; width:100%;}
+.timer_wrap .day_details {background-color: #005e3c; height:100%; display: flex; align-items: center; width:300px; cursor:pointer;}
+.timer_wrap .day_details img {display: block;}
+.timer_wrap .details_title {display: flex; gap:10px; color:#fff; justify-content: center; width:100%; font-size:18px; font-weight: 700;}
+.timer_wrap .titmer_title {display: flex; align-items: center; gap:10px;}
+.timer_wrap .titmer_title span {font-weight: 700; font-size:20px;}
+.timer_wrap .week_box {display: flex; align-items: center; gap:60px; font-weight: 700; font-size:20px;}
+
+
+.header_wrap {
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  right:0;
+  margin:auto;
+  z-index:1;
+
+}
+
+
+
+/*첫번째 header*/
+.top_header_wrap {  border-bottom:1px solid #ffffff23;}
+.top_header .list_link a, .top_header .login_link a, .top_header .login_link{color:#fff;}
+.top_header {display: flex; justify-content: space-between; align-items: center; width:100%; max-width:1360px; margin:0 auto; padding:20px 0; }
+.top_header .list_link, .top_header .login_link {display: flex; align-items: flex-start;}
+.top_header .list_link a {font-size:12px;}
+.top_header .list_link {gap:30px;}
+.top_header .login_link {gap:20px; cursor:pointer; font-size:13px;}
+.top_header .line {position: relative;}
+.top_header .line::before {content:"|"; left:40px; top:0; padding-right:20px; color:#fff;}
+/*국가*/
+.country_main {position: relative;}
+.country_main::before {position: absolute; content: "|"; color:#fff; right:40px; top:0; padding-right:12px;}
+.country {position: absolute; top:50px; left:0; background: #fff; border-radius: 10px; ; padding:10px;}
+.country li {margin-bottom:10px;}
+.country li:last-child {margin-bottom:0;}
+.country a {color:#212121; font-size:14px; font-weight: 700;}
+.country {display: none;}
+.country_choice {display: flex; align-items: center; gap:4px;}
+.country_choice img {display: block; max-width:100%;}
+
+/* 중간 header */
+.middle_top_wrap {border-bottom:1px solid #ffffff23;}
+.middle_top {display: flex; align-items: center; width:100%; height:90px; max-width:1360px; margin:0 auto; gap:100px;}
+.middle_top a {color:#fff; font-size:16px; font-weight: 700;}
+.middle_top nav {display: flex; width:100%;  align-items: center; justify-content: space-between; height:100%;}
+.middle_top .list_link {display: flex; align-items: center; width:100%; max-width:760px; justify-content: space-between; text-align: center; height:100%; }
+.middle_top a {display: block;}
+.middle_top nav .list_link .list_info {position: relative; height:100%; width:120px;}
+.middle_top nav .list_link a {height:100%; display: flex; align-items: center; justify-content: center; gap:20px;}
+.middle_top nav .list_link .list_info .middle_nav {position: absolute; width:120px; padding-top:20px;}
+.middle_top .middle_nav li {padding-bottom:20px;}
+.tikek_link {border:1px solid #fff; padding:10px; border-radius: 10px; font-weight: 700;}
+
+.middle_nav {display: none;}
+
+
+/*상설 전시*/
+.more_box {display: flex; justify-content: space-between; align-items: center;  padding-bottom:20px;border-bottom:3px solid #212121; max-width:1360px; width:100%; margin:100px auto 0;}
+.more_box img {display: block; max-width:100%;}
+.more_box p {font-size:32px; font-weight: 700;}
+.more_img_view {display: flex; align-items: center; gap:40px; padding-bottom:30px; border-bottom:2px solid #ddd; width:100%; max-width:1360px; margin:50px auto 0;}
+.more_img_view p:nth-child(1) {font-size:24px; font-weight: 700;}
+.more_img_view p:nth-child(2) {font-size:18px; font-weight: 400; margin-top:10px; color:#111;}
+.more_img_view p:nth-child(3) {font-size:16px; font-weight: 400; margin-top:10px; color:#666;}
+.more_img_view a {font-size:14px; display: flex; align-items: center; gap:10px; margin-top:10px;}
+
+
+/* 교육 체험 */
+.study {padding-top:50px; width:100%; margin:0 auto; max-width:1360px;}
+.study p {text-align: center; font-size:48px; font-weight: 700;}
+.tab_box { display: flex; align-items: center; justify-content: center; gap:20px; cursor:pointer; font-size:20px; font-weight: 700; color:#666; margin-top:30px;}
+.one_before {position: relative;} 
+.one_before::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 127px;
+  transform: translateY(-50%);
+  width: 4px;
+  height:4px;
+  background-color: #99bfb1;
+  border-radius: 50%;
+}
+
+
+/*스크립트 관련 효과*/
+.nav_box_on .middle_nav {display: block;}
+.nav_box {width:100%; height:100%;}
+.tab_one { color:#005e3c;}
+.header_white {background-color: #fff; z-index:999;}
+.header_white .list_link a {color:#212121;}
+.header_white .top_header_wrap {border-bottom:1px solid #ddd;}
+.header_white .tikek_link {border:1px solid #ddd;}
+.header_white .tikek_link a {color:#333; font-weight: 700; }
+.header_white .login_link a {color:#333;}
+.header_white .country_main {color:#333;}
+.header_white .middle_top_wrap {border-bottom:1px solid #ddd;}
+
+/* 교육 체험*/
+.study_img_box .year {
+  background-color: #1cb2a9;
+  font-size:13px;
+  color:#fff;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  padding:8px;
+  margin-top:10px;
+}
+
+.study_img_box .title {
+  font-weight: 700;
+  margin-top:10px;
+  font-size:20px;
+}
+
+.study_img_box .day {
+  font-weight: 700;
+  margin-top:10px;
+  font-size:16px;
+  color:#666;
+}
+
+.study_img_box {
+  width:100%;
+  height:100vh;
+  height:100svh;
+  margin-top:100px;
+  background: url("../img/folk_museum/main_deco_bg_01.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* 교육 체험 */
+.study_img_wrap {width:100%; max-width:1360px; margin:56px auto 0; display: grid; grid-template-columns: repeat(4, 1fr); gap:30px;}
+.grid_01 {height:400px; overflow: hidden;}
+.grid_01 img {width:100%; height:100%; object-fit: cover;}
+.year.year01 {background-color: #358cdc;}
+.all_view {width:100%; max-width:1360px; margin:80px auto 0;}
+.all_view a {text-align: center; width:100%; display: block;  font-size:16px; font-weight: 700;}
+.all_view a span {border:1px solid #212121; padding:10px;}
+
+
+/* “롯데월드 X 제로월드” 방탈출 */
+.zero_world {
+  width:100%;
+  height:100vh;
+  height:100svh;
+  padding-top:100px;
+  background: url("../img/folk_museum/main_deco_bg_02.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.zero_title {width:100%; max-width:1360px; margin:0 auto; padding-top:56px;}
+.zero_title p { font-size:48px; font-weight: 700; text-align: center;}
+.zero_title span {text-align: center; width:100%; font-size:20px; color:#666; display: inline-block; margin-top:30px; font-weight: 700;}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  .result {
+    color:red;
+  }
+
+  .result_no {
+    color:green;
+  }
+
+</style>
+
+
+
+
+<body>
+  파일명 : <input type="text" id="fileName">
+  <button type="button" id="btn" onclick="btn()">확인</button>
+  <h3 id="result"> </h3>
+
+
+  <script>
+    function btn(){
+      const type = document.getElementById('fileName').value.trim();
+      const img = /\.(jpg|png|gif|webp|svg|)$/i.test(type);
+      const result = document.getElementById('result');
+      
+      if(type == "") {
+        alert('확장자명을 입력하세요.');
+      }
+      
+      else if (img) {
+        result.className = 'result';
+        result.textContent = '이미지 파일입니다';
+      } 
+      
+      else {
+        result.className = 'result_no';
+        result.textContent = '이미지 파일이 아닙니다';
+      }
+    }
+    </script>
+</body>
+</html>

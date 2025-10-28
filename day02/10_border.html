@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  div {
+    width:300px;
+    height:300px;
+    border-radius: 10px;
+    border:3px solid #333;
+    background-color: skyblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:40px;
+    font-weight: 700;
+  }
+
+    .one {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      border-bottom:none;
+    }
+    .one2 {
+      border-top:none;
+      border-bottom:none;
+      border-radius: 0;
+    }
+
+    .one3 {
+      border-top:none;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+
+</style>
+
+
+<body>
+  <div class="one">123</div>
+  <div class="one2">456</div>
+  <div class="one3">789</div>
+</body>
+</html>

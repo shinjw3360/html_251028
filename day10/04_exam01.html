@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+  <!-- 
+    가위바위보 게임 
+    버튼태크에 넣어 선택하여 가위바위보의 승률 계산
+  -->
+
+  <style>
+    button {
+      outline: none;
+      border:none;
+      background-color: transparent;
+    }
+
+    .result {display: none;}
+    .result.on {display: block;}
+    ul, li {
+      list-style: none;
+    }
+
+    .result li:first-child span {
+      font-size:30px; font-weight: 700;
+    }
+
+    .result li:nth-child(2) p {
+      font-size:24px; font-weight: 700;
+    }
+
+    .result li:nth-child(3) span:nth-child(1), span:nth-child(2)  {
+      font-size:24px; font-weight: 700; color:blue;
+    }
+
+    .result li:nth-child(3) span:nth-child(3), span:nth-child(4)  {
+      font-size:24px; font-weight: 700; color:red;
+    }
+    
+    .result li:nth-child(3) span:nth-child(5), span:nth-child(6)  {
+      font-size:24px; font-weight: 700; color:green;
+    }
+  </style>
+
+
+<body>
+  <button type="button">
+    <img src="../img/math_img_1.jpg" alt="">
+  </button>
+
+  <button type="button">
+    <img src="../img/math_img_2.jpg" alt="">
+  </button>
+
+  <button type="button">
+    <img src="../img/math_img_3.jpg" alt="">
+  </button>
+
+  <ul class="result">
+    <li><span id="player"></span> <span id="com"></span></li>
+    <li id="player_result"><p>현재 전적</p></li>
+    <li id="state"><span>승</span> <span id="win"></span> <span>패</span> <span id="lose"></span> <span>무승부</span> <span id="draw"></span></li>
+  </ul>
+
+  
+
+  <!--
+     player : 가위 / com : 바위 player가 졌습니다. 
+     현재 전적
+     승:9 무:6 패:7
+     승률 : 56.25%
+  -->
+
+
+  <script>
+    let win = 0, lose = 0, draw = 0;
+    const buttons = document.querySelectorAll('button');
+    const playerEl = document.getElementById('player');
+    const comEl = document.getElementById('com');
+    const stateEl = document.getElemen  tById('player_result');
+    const winEl = document.getElementById('win');
+    const loseEl = document.getElementById('lose');
+    const drawEl = document.getElementById('draw');
+    const resultBoxEl = document.querySelector('.result');
+  
+    function nameOf(n) {
+      if (n === 0) return '가위';
+      else if (n === 1) return '바위';
+      else return '보';
+    }
+  
+    function judge(p, c) {
+      if (p === c) return 'draw';
+      else if ((p === 0 && c === 2) || (p === 1 && c === 0) || (p === 2 && c === 1)) return 'win';
+      else return 'lose';
+    }
+  
+    function rate() {
+      const games = win + lose;
+      if (games === 0) return '0.00';
+      return ((win / games) * 100).toFixed(2);
+    }
+  
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener('click', function () {
+        const player = i;
+        const com = Math.floor(Math.random() * 3);
+  
+        const result = judge(player, com);
+        if (result === 'win') { win = win + 1; }
+        else if (result === 'lose') { lose = lose + 1; }
+        else { draw = draw + 1; }
+  
+        playerEl.textContent = nameOf(player);
+        comEl.textContent    = nameOf(com);
+  
+        let msg = 'player : ' + nameOf(player) + ' / com : ' + nameOf(com) + ' ';
+        if (result === 'win') msg += 'player가 이겼습니다.';
+        else if (result === 'lose') msg += 'player가 졌습니다.';
+        else msg += '무승부입니다.';
+  
+        stateEl.innerHTML = '<p>' + msg + '</p><p>현재 전적</p><p>승률 : ' + rate() + '%</p>';
+  
+        winEl.textContent  = win;
+        loseEl.textContent = lose;
+        drawEl.textContent = draw;
+  
+        // result 박스 오픈
+        resultBoxEl.classList.add('on');
+      });
+    }
+  </script>
+  
+
+
+</body>
+</html>

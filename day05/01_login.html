@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    * {margin:0; padding:0; outline: none;}
+    body {box-sizing: border-box; background-color: beige;}
+    a {text-decoration: none;}
+
+    .container {
+      width:300px;
+      background-color: aqua;
+      position: absolute;
+      top:50%;
+      left:50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      border-radius: 10px;
+      padding:20px 30px;
+    }
+
+    .text-field {
+      width:100%;
+      padding:12px 18px;
+      box-sizing: border-box;
+      margin-bottom:10px;
+      border:1px solid #ededed;
+      border-radius: 8px;
+      font-size:14px;
+    }
+
+    input::placeholder {font-size:12px;}
+
+
+    .btn {
+      width:100%;
+      padding:12px 18px;
+      border-radius: 8px;
+      outline: none;
+      background-color: rgba(0, 0, 255, 0.384);
+      color:#fff;
+      border:none;
+      margin-bottom:30px;
+      cursor:pointer;
+    }
+
+    .link a {
+      color:rgb(245, 114, 114);
+      font-size:12px;
+    }
+
+
+
+  </style>
+
+
+
+  <div class="container">
+    <form>
+      <input type="text" class="text-field" name="id" placeholder="아이디를 입력하세요.">
+      <input type="password" name="pw" class="text-field" placeholder="비밀번호를 입력하세요.">
+      <button type="submit" class="btn">로그인</button>
+    </form>
+    <div class="link">
+      <a href="#" target="_blank">비밀번호를 잊어버리셨습니까?</a>
+    </div> <!-- link -->
+  </div> <!-- container -->
+</body>
+</html>

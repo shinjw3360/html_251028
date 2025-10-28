@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  table {
+    width:100%;
+    text-align: center;
+    border-collapse: collapse;
+  }
+
+  caption {
+    font-size:40px;
+    font-weight: 700;
+    margin-bottom:10px;
+  }
+
+  th, td {
+    border:1px solid #ededed;
+    padding:12px 0;
+    font-weight: 500;
+  }
+
+  .double th {
+    border-top:4px double #7c7373;
+    background: linear-gradient(90deg, #f8ff00 0%, #3ad59f 100%);
+  }
+
+  .double th:nth-child(1) {
+    color:red;
+    font-weight: 700;
+    font-size:30px;
+  }
+
+  .double th:nth-child(2) {
+    color:blue;
+    font-weight: 700;
+    font-size:30px;
+  }
+
+  .name {
+    background-color: #000;
+    color:#fff;
+  }
+
+</style>
+<body>
+  <div>
+    <table>
+      <caption>성적표</caption>
+      <tr>
+        <th class="name">번호</th>
+        <th class="name">이름</th>
+        <th class="name">성적</th>
+      </tr>
+
+      <tr>
+        <td>1</td>
+        <td>kim</td>
+        <td class="one">70</td>
+      </tr>
+
+      <tr>
+        <td>2</td>
+        <td>pack</td>
+        <td class="one2">96</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>hong</td>
+        <td class="one3">85</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>lee</td>
+        <td class="one4">45</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>choi</td>
+        <td class="one5">69</td>
+      </tr>
+
+      <tr class="double">
+        <th colspan="2">합계</th>
+        <th class="one6">432</th>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

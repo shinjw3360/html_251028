@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./01_style.css">
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="../js/jquery-3.7.1.min.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="main_swiper">
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide one_slide">
+          <div class="swiper_img"><img src="../img/folk_museum/slide01.jpeg" alt=""></div>
+          <div class="text_box">
+            <p>롯데월드<br>민속 박물관</p>
+            <span>롯데월드 민속박물관은 우리 민족의 역사와<br>전통문화가 살아 숨쉬는 공간입니다.</span>
+          </div>
+        </div>
+    
+        <div class="swiper-slide one_slide">
+          <div class="swiper_img"><img src="../img/folk_museum/slide02.jpeg" alt=""></div>
+          <div class="text_box">
+            <p>민속박물관<br>상설전시</p>
+            <span>롯데월드 민속박물관은 우리 민족의 역사와<br>시대별로 감상할 수 있습니다.</span>
+          </div>
+        </div>
+    
+        <div class="swiper-slide one_slide">
+          <div class="swiper_img"><img src="../img/folk_museum/slide03.jpeg" alt=""></div>
+          <div class="text_box">
+            <p>시대별<br>문화유산</p>
+            <span>롯데월드 민속박물관에 펼쳐진<br>시대별 문화유산과 역사</span>
+          </div>
+        </div>
+      </div>
+    
+      <!-- ⬇️ 이 셋은 wrapper 밖으로! -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    
+      <div class="swiper_controll">
+        <div class="swiper_page"></div>  <!-- fraction이 여기에 렌더됨 -->
+        <button class="swiper_state" type="button" aria-label="일시정지" aria-pressed="true">
+          <img class="swiper_state_icon" src="../img/folk_museum/paste_white.svg" alt="">
+        </button>
+      </div>
+    </div>
+
+
+    <div class="timer_wrap">
+      <div class="timer">
+        <div class="titmer_title">
+          <img src="../img/folk_museum/timer.svg" alt="">
+          <span>민속박물관 운영시간</span>
+        </div>
+  
+        <div class="week_box">
+          <p class="week"> <span>평일</span>11:00 ~ 19:00 </p>
+          <p class="week_01"> <span>주말/공휴일</span>11:00 ~ 20:00 </p>
+        </div>      
+      </div> <!-- timer -->
+
+      <div class="day_details">
+        <div class="details_title">
+          <img src="../img/folk_museum/3d.svg" alt="">
+          <span>일별 상세 일정 보기</span>
+        </div>
+      </div>
+    </div> <!-- timer_wrap -->
+
+  </div> <!-- main_swiper -->
+
+
+
+
+  <div class="wrap_full">
+    <div class="header_wrap">
+      <div class="top_header_wrap">
+        <header class="top_header">
+          <ul class="list_link">
+            <li><a href="#">롯데월드 어드벤처</a></li>
+            <li><a href="#">롯데월드 어드벤처 부산</a></li>
+            <li><a href="#">서울 스카이</a></li>
+            <li><a href="#">롯데월드 아쿠아리움</a></li>
+            <li><a href="#">롯데워터파크</a></li>
+            <li><a href="#">롯데 아쿠아리움 하노이</a></li>
+            <li class="line"><a href="#">민속 박물관</a></li>
+            <li><a href="#">아이스 링크</a></li>
+          </ul> <!-- list_link -->
+
+          <ul class="login_link">
+            <li><a href="#">로그인</a></li>
+            <li class="country_main">
+              <div class="country_choice">
+                <span>KOR</span>
+                <img src="../img/folk_museum/arrow_down.svg" alt="">
+              </div>
+              <ul class="country">
+                <li><a href="#">ENG</a></li>
+                <li><a href="#">JAPAN</a></li>
+                <li><a href="#">CHN</a></li>
+              </ul>
+            </li>
+          </ul> <!-- login_link-->
+        </header> <!-- top_header -->
+      </div> <!-- top_header_wrap -->
+
+      <div class="middle_top_wrap">
+        <header class="middle_top">
+          <div class="middle_logo">
+            <a href="#">
+              <img src="../img/folk_museum/logo_white.svg" alt="">
+            </a>
+          </div>
+
+          <div class="nav_box">
+            <nav>
+              <ul class="list_link">
+                <li class="list_info">
+                  <a href="#">민속 박물관</a>
+                  <ul class="middle_nav">
+                    <li><a href="#">민속박물관 소개</a></li>
+                    <li><a href="#">관람안내</a></li>
+                    <li><a href="#">오시는 길</a></li>
+                  </ul>
+                </li>
+                <li class="list_info">
+                  <a href="#">부대시설</a>
+                  <ul class="middle_nav">
+                    <li><a href="#">시설안내</a></li>
+                    <li><a href="#">대관안내</a></li>
+                    <li><a href="#">전통혼례</a></li>
+                  </ul>
+                </li>
+                <li class="list_info">
+                  <a href="#">전시정보</a>
+                  <ul class="middle_nav">
+                    <li><a href="#">상설전시</a></li>
+                    <li><a href="#">특별전시</a></li>
+                    <li><a href="#">소장품정보</a></li>
+                  </ul>
+                </li>
+    
+                <li class="list_info">
+                  <a href="#">프로그램</a>
+                  <ul class="middle_nav">
+                    <li><a href="#">역사교육</a></li>
+                    <li><a href="#">전통공예체험</a></li>
+                    <li><a href="#">방탈출</a></li>
+                  </ul>
+                </li>
+  
+                <li class="list_info">
+                  <a href="#">소통서비스</a>
+                  <ul class="middle_nav">
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">이용문의</a></li>
+                    <li><a href="#">FAQ</a></li>
+                  </ul>
+                </li>
+              </ul>
+  
+              <ul class="tikek_link">
+                <li><a href="#">예매하기</a></li>
+              </ul>
+            </nav>
+
+          </div>
+        </header> <!-- middle_top -->
+      </div> <!-- middle_top_wrap -->
+    </div> <!-- header_wrap -->
+
+
+    <div class="wrap_container">
+      <div>
+        <div class="more_box">
+          <p>상설전시</p>
+          <img src="../img/folk_museum/plus_white.svg" alt="">
+        </div>
+  
+        <div class="more_img_view">
+          <div class="more_img">
+            <img src="../img/folk_museum/img01.jpg" alt="">
+          </div>
+          <div class="more_img_text">
+            <p>선사시대</p>
+            <p>선사시대 사람들의 일상생활 모습을 모형으로 재현</p>
+            <p>선사시대실에서는 구석기, 신석기, 청동기 시대의 유물이 전시되고 있으며, 각 시대별 사람들의 일상생활 모습을 모형으로 재현하여 생생하게 감상할 수 있습니다</p>
+            
+            <a href="#">
+              <span>바로가기</span>
+              <img src="../img/folk_museum/plus.svg" alt="">
+            </a>
+          </div>
+        </div>
+  
+        <div class="more_img_view">
+          <div class="more_img">
+            <img src="../img/folk_museum/img02.jpg" alt="">
+          </div>
+          <div class="more_img_text">
+            <p>삼국시대</p>
+            <p>고구려부터 가야까지의 문화를 모형으로 재현</p>
+            <p>삼국시대실에서는 고대 삼국(고구려, 백제, 신라)과 가야의 찬란한 문화를 다양한 유물과 모형을 통해 감상하실 수 있습니다.</p>
+            
+            <a href="#">
+              <span>바로가기</span>
+              <img src="../img/folk_museum/plus.svg" alt="">
+            </a>
+          </div>
+        </div> <!-- more_img_view -->
+      </div>
+
+
+
+      <div class="study_img_box">
+        <div class="study">
+          <p>교육 & 체험</p> 
+          <ul class="tab_box">
+           <li class="tab_one">역사 교육</li>
+           <li class="one_before">전통공예체험</li>
+          </ul>
+         </div>
+
+
+        <div class="study_img_wrap">
+          <div class="study_img">
+            <a href="#">
+              <div class="grid_01">
+                <img src="../img/folk_museum/img03.jpg" alt="">
+              </div>
+              <p class="year">유아</p>
+              <p class="title">열두 동물의 신나는 달리기</p>
+              <p class="day">2025.03.05 ~ 2025.12.31</p>
+            </a>
+          </div> <!-- study_img -->
+
+          <div class="study_img">
+            <a href="#">
+              <div class="grid_01">
+                <img src="../img/folk_museum/img04.jpg" alt="">
+              </div>
+              <p class="year">유아</p>
+              <p class="title">구석기인의 하루</p>
+              <p class="day">2025.05.05 ~ 2025.12.31</p>
+            </a>
+          </div> <!-- study_img -->
+
+          <div class="study_img">
+            <a href="#">
+              <div class="grid_01">
+                <img src="../img/folk_museum/img05.jpg" alt="">
+              </div>
+              <p class="year year01">초등</p>
+              <p class="title">왁자지껄! 살아있는 박물관</p>
+              <p class="day">2025.03.05 ~ 2025.12.31</p>
+            </a>
+          </div> <!-- study_img -->
+
+          <div class="study_img">
+            <a href="#">
+              <div class="grid_01">
+                <img src="../img/folk_museum/img06.jpg" alt="">
+              </div>
+              <p class="year year01">초등</p>
+              <p class="title">[테마] 유물 속 십이지신 이야기</p>
+              <p class="day">2025.08.01 ~ 2025.12.31</p>
+            </a>
+          </div>
+        </div> <!-- study_img_wrap -->
+
+        <div class="all_view">
+          <a href="#">
+            <span>전체보기</span>
+          </a>
+        </div> <!-- all_view -->
+      </div> <!-- study_img_box-->
+
+
+      <div class="zero_world">
+        <div class="zero_title">
+          <p> “롯데월드 X 제로월드” 방탈출 </p>
+          <span>경험해보고 싶었던 “새로운 세상” 만나보세요</span>
+        </div>
+        
+      </div>
+
+
+
+    </div> <!-- wrap_container -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div> <!-- wrap_full -->
+
+  <script>
+  $(function () {
+    $('.middle_logo img').attr('src', function (_, src) {
+      return src.replace(/logo_white(\.\w+)$/i, 'logo$1');
+    });
+  });
+
+
+  $(function () {
+    const THRESHOLD = 10; // 몇 px 내려가면 logo로 전환할지
+    const re = /logo(_white)?(\.\w+)$/i;
+
+    function swapLogo(useMain) {
+      const $img = $('.middle_logo img');
+      const cur = $img.attr('src');
+      if (!re.test(cur)) return;
+
+      const next = cur.replace(re, (_, isWhite, ext) => useMain ? `logo${ext}` : `logo_white${ext}`);
+      if (cur !== next) $img.attr('src', next);
+    }
+
+    function apply() {
+      const useMain = $(window).scrollTop() > THRESHOLD;
+      $('.header_wrap').toggleClass('header_white', useMain); // 선택사항
+      swapLogo(useMain);
+    }
+
+    // 성능: rAF 스로틀
+    let ticking = false;
+    $(window).on('scroll', function () {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(function () {
+          apply();
+          ticking = false;
+        });
+      }
+    });
+
+    // 초기 상태 반영 + (선택) 미리 로드
+    apply();
+    const pre = new Image();
+    pre.src = $('.middle_logo img').attr('src').replace(/logo_white(\.\w+)$/i, 'logo$1');
+  });
+
+
+
+
+    const swiper = new Swiper(".mySwiper", {
+      loop: true,
+      autoplay: { delay: 3000, disableOnInteraction: false },
+      slidesPerView: 1, // 우선 1로 확인 후 필요하면 "auto"로 바꾸세요
+  
+      pagination: {
+        el: ".swiper_page",   // 컨트롤 전체가 아니라 숫자 영역만!
+        type: "fraction",
+        renderFraction: (cur, total) => `
+          <span class="${cur}">1</span>
+          <span>/</span>
+          <span class="${total}">3</span>
+        `,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  
+    // ▶/⏸ 토글(선택)
+    const ICONS = {
+      pause: '../img/folk_museum/paste_white.svg',
+      play:  '../img/folk_museum/play_white.svg'
+    };
+    const btn  = document.querySelector('.swiper_state');
+    const icon = document.querySelector('.swiper_state_icon');
+    function sync() {
+      const running = swiper.autoplay && swiper.autoplay.running;
+      btn.setAttribute('aria-pressed', String(running));
+      btn.setAttribute('aria-label', running ? '일시정지' : '재생');
+      icon.src = running ? ICONS.pause : ICONS.play;
+    }
+    sync();
+    btn.addEventListener('click', () => {
+      (swiper.autoplay && swiper.autoplay.running) ? swiper.autoplay.stop() : swiper.autoplay.start();
+      sync();
+    });
+    swiper.on('autoplayStart', sync);
+    swiper.on('autoplayStop',  sync);
+
+  
+
+
+    $('.tab_box li').click(function(){
+      $('.tab_box li').removeClass('tab_one'); // 모든 li에서 제거
+      $(this).addClass('tab_one');             // 클릭한 li만 추가
+    });
+
+
+  </script>
+
+</body>
+
+</html>
