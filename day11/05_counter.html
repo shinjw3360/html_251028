@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+    버튼 2개 준비 
+    + 숫자 -
+    + : 값이 1씩 증가
+    - : 값이 1씩 감소 (값이 0이면 더이상 감소X)
+  -->
+
+
+  <style>
+    button {outline: none; border:none; padding:12px 18px; border-radius: 6px; color:#fff; font-size:20px; font-weight: 700; cursor:pointer;}
+    #incre {background-color: royalblue; margin-right:30px;}
+    #decre {background-color: crimson;}
+    h1 {padding-left:50px; font-size:50px;}
+
+  </style>
+
+  <h1 id="num">0</h1>
+
+  <div>
+    <button type="button" id="incre" onclick="plus()"> + </button>
+    <button type="button" id="decre" onclick="minus()"> - </button>
+  </div>
+
+
+  <script>
+  function plus(){
+    num.innerText = +num.innerText + 1; 
+  }
+  
+  function minus(){ 
+    var n = +num.innerText; if(n>0) num.innerText = n - 1; 
+  }
+  </script>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="KO">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>계산기</title>
+</head>
+  <style>
+    * { margin:0; padding:0;}
+    body {box-sizing: border-box;}
+    .result_box {
+      margin-top:70px;  
+    }
+    .result_box p {padding:0 20px; display: flex; justify-content: flex-end; align-items: center;}
+    .wrap {width:100%; max-width:300px; margin:0 auto;}
+    .result {padding:0 10px; height:60px; background-color:violet; color:#fff; font-size:20px; font-weight: 700; border-radius: 8px; outline: none; border:none; cursor:inherit}
+
+    .grid_box { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top:10px;}
+    .grid_box button {outline: none; border:none; color:#fff; background-color: blueviolet; padding:12px 20px; border-radius: 8px; font-size:20px; font-weight: 700; cursor:pointer;}
+    button.reset {outline: none; border:none; background-color: orangered; color:#fff; border-radius: 8px; font-size:20px; font-weight: 700; width:100%; padding:12px 20px;  cursor:pointer; margin-top:14px;}
+    button:hover {
+      background-color: cadetblue;
+      color:#fff;
+    }
+  </style>
+
+
+
+
+
+  <!-- 계산기 : 소수점 2자리 -->
+
+<body>
+  <div class="wrap">
+    <div class="result_box">
+      <p id="result" class="result"></p>
+    </div>
+
+    <div class="grid_box">
+      <button type="button">7</button>
+      <button type="button">8</button>
+      <button type="button">9</button>
+      <button type="button">+</button>
+      <button type="button">4</button>
+      <button type="button">5</button>
+      <button type="button">6</button>
+      <button type="button">-</button>
+      <button type="button">1</button>
+      <button type="button">2</button>
+      <button type="button">3</button>
+      <button type="button">*</button>
+      <button type="button">.</button>
+      <button type="button">0</button>
+      <button type="button">=</button>
+      <button type="button">/</button>
+    </div> <!-- grid_box -->
+
+    <div>
+      <button type="button" class="reset" onclick="resetb()">C</button>
+    </div>
+  </div> <!-- wrap -->
+
+  <script>
+
+
+    
+  </script>
+
+
+</body>
+</html>

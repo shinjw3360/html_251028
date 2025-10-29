@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<!-- 
+  과목과 점수 input2개 생성하기 추가 버튼 만들기 
+  추가버튼을 생성 => map에 저장 
+  출력버튼 생성 > ul > li 형태로 출력 html : 89
+  결과 버튼 생성 : 합계, 평균, 합격여부 (60점이상이면 pass) => h3
+-->
+
+<style>
+  input {display: block; outline: none; border:1px solid #ededed; padding:12px 18px; border-radius: 6px; font-size:16px;}
+  input::placeholder {font-size:14px; font-weight: 500;}
+  .subject {font-size:20px; font-weight: 700;}
+  .score {font-size:20px; font-weight: 700;}
+  .score_box {margin-bottom:20px;}
+  .subject_box {margin-bottom:20px;}
+
+  .btn_wrap button {outline: none; border:none; padding:20px; color:#fff; font-size:16px; font-weight: 700; border-radius: 6px; cursor:pointer;}
+  
+  .btn_wrap button:nth-child(1) { background-color: red;  }
+  .btn_wrap button:nth-child(2) { background-color: blue;  }
+  .btn_wrap button:nth-child(3) { background-color: violet;  }
+
+  .score_result {display: none;}
+  .score_result.on {display: block;}
+  ul, li {list-style: none;}
+
+</style>
+
+
+<body>
+    <p>과목 추가</p>
+    <div class="subject_box">
+      <span class="subject">과목</span> <input type="text" id="subject" placeholder="과목을 입력하세요.">
+    </div>
+    <div class="score_box">
+      <span class="score">점수</span> : <input type="text" id="score" placeholder="점수를 입력하세요.">
+    </div>  
+
+    <div class="btn_wrap">
+      <button type="button" id="add" onclick="add()">추가</button>
+      <button type="button" id="printBtn" onclick="print_result()">출력</button>
+      <button type="button" id="resultBtn" onclick="result()">결과</button>
+    </div>
+
+    <ul class="score_result">
+      <li><span>과목점수</span><span id="add_text"></span></li>
+      <li><span>과목점수</span><span id="result_text"></span></li>
+    </ul>
+
+
+    <script>
+      //추가
+        function add(){
+          const myMap = new Map()
+          const subj = document.getElementById(subject);
+          const scorej = Number(document.getElementById(score));
+        }
+    //출력
+    function print_result(){
+
+    }
+
+    //결과
+    function result() {
+
+    }
+    </script>
+    
+
+
+
+</body>
+</html>

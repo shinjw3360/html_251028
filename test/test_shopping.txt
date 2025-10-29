@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Purple Mall - 홈</title>
+  <style>
+    body {
+      font-family: "Noto Sans KR", sans-serif;
+      background: #f8f9fa;
+      margin: 0;
+    }
+
+    header {
+      background-color: #6c5ce7;
+      color: white;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .banner {
+      background: linear-gradient(135deg, #a29bfe, #6c5ce7);
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .banner h1 {
+      font-size: 36px;
+    }
+
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 50px 20px;
+    }
+
+    .product {
+      background: white;
+      width: 220px;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+    }
+
+    .product img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .product h3 {
+      margin: 10px 0 5px;
+    }
+
+    .product p {
+      color: #6c5ce7;
+      font-weight: bold;
+    }
+
+    footer {
+      background-color: #2d3436;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">🛍️ Purple Mall</div>
+    <nav>
+      <a href="#">홈</a>
+      <a href="#">상품</a>
+      <a href="#">장바구니</a>
+      <a href="#" onclick="logout()">로그아웃</a>
+    </nav>
+  </header>
+
+  <section class="banner">
+    <h1>보라빛 감성의 쇼핑, Purple Mall 💜</h1>
+    <p>세련된 패션과 트렌디한 상품을 만나보세요.</p>
+  </section>
+
+  <section class="products">
+    <div class="product">
+      <img src="https://via.placeholder.com/220x220?text=Product+1" alt="상품1" />
+      <h3>보라색 가디건</h3>
+      <p>₩49,000</p>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/220x220?text=Product+2" alt="상품2" />
+      <h3>라벤더 백팩</h3>
+      <p>₩69,000</p>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/220x220?text=Product+3" alt="상품3" />
+      <h3>바이올렛 스니커즈</h3>
+      <p>₩79,000</p>
+    </div>
+  </section>
+
+  <footer>© 2025 Purple Mall. All rights reserved.</footer>
+
+  <script>
+    function logout() {
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>

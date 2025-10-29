@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<!-- set을 생성하고 1~10까지 랜덤수 5개를 채워서 출력 (중복x) --> 
+<body>
+  <h1 id="result"></h1>
+
+  <script>
+    const set = new Set();
+    while (set.size < 5) set.add(1 + Math.floor(Math.random() * 10));
+    document.getElementById('result').textContent = [...set].join(' ');
+  </script>
+</body>
+</html>

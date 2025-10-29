@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+  <!-- 
+    1 ~ 99 까지의 숫자 중 하나를 랜덤으로 선택하여 해당 숫자를 맞추는 게임
+    범위 벗어나면 1~99 까지의 숫자만 가능합니다.
+  -->
+
+  <style>
+    button {background-color: blueviolet; color:#fff; border-radius: 6px; padding:12px 20px; outline: none; border:none; cursor:pointer;}
+    input {border:1px solid #ededed; padding:12px 18px; border-radius: 8px; outline: none;}
+  </style>
+
+<body>
+  <div> 
+    <button type="button" id="random" onclick="randomn()">랜덤 숫자 생성 버튼</button>
+    <button type="button" id="re" onclick="re()">다시 시도</button>
+    <h1 id="printMsg"></h1>
+  </div>
+
+  <div>
+    <input type="text" id="myNum" placeholder="값을 입력하세요.">
+    <button type="button" id="compareNum" onclick="check()">제출</button>
+    <h1 id="result"></h1>
+  </div>
+
+
+  <script>
+let comp=0, counter=0, max=10, logs=[];
+
+const msg=printMsg, res=result, inp=myNum, btnRe=document.getElementById('re');
+btnRe.disabled = true;
+
+// 입력 제한: 숫자만, 최대 2자리, 100 미만
+inp.setAttribute('maxlength','2');
+inp.addEventListener('input', e=>{
+  let v = e.target.value.replace(/\D/g,'');  // 숫자만
+  if(v.length>2) v = v.slice(0,2);           // 최대 2자리
+  if(v!=='' && +v>=100) v = '99';            // 100 이상 방지
+  e.target.value = v;
+});
+
+function randomn(){
+  comp = (Math.random()*99|0)+1; counter=0; logs=[]; btnRe.disabled=true;
+  msg.innerText='생성됨(1~99)'; res.innerText=''; inp.value=''; inp.focus();
+  console.clear(); console.log('정답:', comp); // 콘솔엔 정답만
+}
+
+function check(){
+  if(!comp){ msg.innerText='먼저 생성 버튼!'; return; }
+  if(counter>=max){ msg.innerText='10번 끝! 다시시도를 누르세요.'; return; }
+
+  const n = +inp.value;
+  if(!(Number.isInteger(n)&&n>=1&&n<=99)){ res.innerText='1~99 입력'; return; }
+
+  counter++;
+  const r = n===comp ? '정답!' : (n<comp ? 'UP' : 'DOWN');
+
+  logs.push(`${counter}번시도 (입력: ${n}) ${r}`);
+  res.innerText = logs.join('\n');
+
+  btnRe.disabled = false;
+
+  if(n===comp){ msg.innerText = `${counter}번만에 정답!`; }
+  else if(counter===max){ msg.innerText='10번안에 못맞추면 다시시도를 누르세요.'; }
+
+  inp.select();
+}
+
+function re(){
+  if(counter===0){ msg.innerText='제출 후에만 다시시도 가능합니다.'; return; }
+  comp=0; counter=0; logs=[]; btnRe.disabled=true;
+  msg.innerText='리셋됨. 다시 생성하세요.'; res.innerText=''; inp.value='';
+  console.clear();
+}
+</script>
+
+
+</body>
+</html>
