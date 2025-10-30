@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  1
+
+
+  <script>
+    /*
+    class User 생성
+    생성자로 name, birth를 받아서 멤버변수로 저장
+    get age() : 나이를 리턴 오늘날짜연도 - 생년월일연도
+    status() : 성인인지 미성년자인지 콘솔출력하는 메서드 생성
+    2명의 객체를 생성해서 하기
+    */
+
+    class User {
+    constructor(name, birth) {
+    const today = new Date();
+    const thisYear = today.getFullYear();
+
+    const birthDate = new Date(birth);
+    const birthYear = birthDate.getFullYear();
+
+    this.name = name;
+    this.birth = birthDate;
+
+    this.isValid = true;
+
+    if (isNaN(birthDate.getTime())) {
+      this.isValid = false;
+    }
+
+    if (birthYear > thisYear) {
+      this.isValid = false;
+    }
+  }
+
+  // 나이
+  get age() {
+    if (!this.isValid) {
+      return null;
+    }
+    const today = new Date();
+    const thisYear = today.getFullYear();
+    const birthYear = this.birth.getFullYear();
+    return thisYear - birthYear;
+  }
+
+  status() {
+
+    if (!this.isValid) {
+      return;
+    }
+
+    if (this.age >= 19) {
+      console.log(`${this.name}님은 성인입니다. (나이: ${this.age})`);
+    } else {
+      console.log(`${this.name}님은 미성년자입니다. (나이: ${this.age})`);
+    }
+  }
+}
+
+const user1 = new User('아이브', '2000-05-10');
+user1.status();
+
+const user2 = new User('에스파', '2027-01-01');
+user2.status();
+  </script>
+</body>
+</html>
