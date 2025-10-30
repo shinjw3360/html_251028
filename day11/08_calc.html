@@ -61,11 +61,85 @@
   </div> <!-- wrap -->
 
   <script>
+  const out = document.getElementById('result');
+  const pad = document.querySelector('.grid_box');
 
+  let locked = false;
 
-    
+  const isOp = ch => ['+','-','*','/'].includes(ch);
+  const last = () => out.textContent.slice(-1);
+
+  function setError(){
+    out.textContent = 'Error';
+    locked = true;
+  }
+
+  function resetb(){
+    out.textContent = '0';
+    locked = false;
+  }
+
+  function getToken(txt){
+    const raw = txt.split(/[+\-*/]/).pop() || '';
+    const clean = raw.replace(/^-/, '');
+    return { raw, clean };
+  }
+
+  pad.addEventListener('click', e => {
+    if (e.target.tagName !== 'BUTTON') return;
+    if (locked) return;
+
+    const v = e.target.textContent;
+    let txt = out.textContent;
+
+    if (v === '=') {
+      const exp = txt.replace(/^0$/, '0');
+      if (!/^[\d.+\-*/ ]+$/.test(exp)) { setError(); return; }
+      try {
+        const r = Function('return ' + exp)();
+        if (!Number.isFinite(r)) { setError(); return; }
+        const r2 = Math.round(r * 100) / 100;
+        out.textContent = r2.toFixed(2).replace(/\.?0+$/,'');
+      } catch {
+        setError();
+      }
+      return;
+    }
+
+    if (txt === '0' && /\d/.test(v)) {
+      out.textContent = v;
+      return;
+    }
+
+    if (isOp(v)) {
+      if (!txt || isOp(last())) {
+        if (!txt && v === '-') { out.textContent = '-'; }
+        return;
+      }
+      out.textContent += v;
+      return;
+    }
+
+    if (v === '.') {
+      const { clean } = getToken(txt);
+      if (clean.includes('.')) return;
+      if (isOp(last()) || txt === '' || txt === '-') {
+        out.textContent += '0.';
+      } else {
+        out.textContent += '.';
+      }
+      return;
+    }
+
+    if (/\d/.test(v)) {
+      const { clean } = getToken(txt);
+      if (clean.includes('.')) {
+        const dec = clean.split('.')[1] || '';
+        if (dec.length >= 2) return;
+      }
+      out.textContent += v;
+    }
+  });
   </script>
-
-
 </body>
 </html>
