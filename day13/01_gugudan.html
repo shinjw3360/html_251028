@@ -6,12 +6,44 @@
   <title>Document</title>
 </head>
 
+<style>
+  * {margin:0; padding:0;}
+  button {outline: none; border:none; padding:20px; border-radius: 6px; font-size:16px; font-weight: 700; color:#fff; cursor:pointer;}
+  .problem {background-color: cornflowerblue; }
+  .comp {background-color: crimson;}
+  body {box-sizing: border-box;}
+  .write_box {position: relative;}
+  .write_box input {outline: none; border:1px solid #666; padding:12px 18px; border-radius: 6px; font-size:16px; font-weight: 700;}
+
+  .checkbox {
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    left:40px;
+    width:20px;
+    height:20px;
+  }
+
+</style>
+
 <body>
   <button type="button" id="problem" class="problem" onclick="problem()">문제 풀이</button>
+
+
+  <ul>
+    <li>
+      <span>1</span>
+      <div>
+        <p class="moon"></p>
+        <p>=</p>
+        <div class="write_box">
+          <input type="text" id="write">
+          <img src="../img/gugudan/checkbox.svg" alt="" class="checkbox">
+        </div>
+      </div>
+    </li> 
+  </ul>  
+
   <button type="button" id="comp" class="comp" onclick="comp()">정답 확인</button>
-
-  
-
-
 </body>
 </html>
