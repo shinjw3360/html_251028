@@ -8,12 +8,13 @@
 
 <style>
   * {margin:0; padding:0;}
+  .wrap {width:100%; max-width:500px; margin:0 auto;}
   button {outline: none; border:none; padding:20px; border-radius: 6px; font-size:16px; font-weight: 700; color:#fff; cursor:pointer;}
   .problem {background-color: cornflowerblue; }
   .comp {background-color: crimson;}
   body {box-sizing: border-box;}
   .write_box {position: relative;}
-  .write_box input {outline: none; border:1px solid #666; padding:12px 18px; border-radius: 6px; font-size:16px; font-weight: 700;}
+  .write_box input {outline: none; border:1px solid #666; padding:12px 18px; border-radius: 6px; font-size:16px; font-weight: 700; width:100%; box-sizing: border-box;}
 
   .checkbox {
     position: absolute;
@@ -23,27 +24,99 @@
     width:20px;
     height:20px;
   }
-
+  .num {font-size:40px; font-weight: 700;}
+  .flex_box {display: flex; align-items: center; gap:10px;}
+.flex_box_moon {display: flex; align-items: center; gap:10px; margin:30px 0;}
+.flex_box_moon p:nth-child(1), p:nth-child(2) {font-size:40px; font-weight:700; }
+.comp_button {margin:0 auto; width:100%; max-width:120px; text-align: center;}
 </style>
 
 <body>
-  <button type="button" id="problem" class="problem" onclick="problem()">문제 풀이</button>
-
-
-  <ul>
-    <li>
-      <span>1</span>
-      <div>
-        <p class="moon"></p>
-        <p>=</p>
-        <div class="write_box">
-          <input type="text" id="write">
-          <img src="../img/gugudan/checkbox.svg" alt="" class="checkbox">
+  <div class="wrap">
+    <button type="button" id="problem" class="problem" onclick="problem()">문제 풀이</button>
+  
+    <ul id="quizList">
+      <!-- <li class="flex_box">
+        <span class="num">1</span>
+        <div class="flex_box_moon">
+          <p class="moon"></p>
+          <p>=</p>
+          <div class="write_box">
+            <input type="text" id="write">
+            <img src="../img/gugudan/checkbox.svg" alt="" class="checkbox">
+          </div>
         </div>
-      </div>
-    </li> 
-  </ul>  
+      </li>  -->
+    </ul>  
+    
+    <div class="comp_button">
+      <button type="button" id="comp" class="comp" onclick="comp()">정답 확인</button>
+    </div>
 
-  <button type="button" id="comp" class="comp" onclick="comp()">정답 확인</button>
+    <p id="comp_counter"></p>
+  </div>
+
+
+  <script>
+  const quizList = document.getElementById('quizList');
+  const problemBtn = document.getElementById('problem');
+  const compBtn = document.getElementById('comp');
+  const compCounter = document.getElementById('comp_counter');
+
+  // 문제 10개 만들기
+  function makeProblems() {
+    quizList.innerHTML = '';        // 기존 문제 제거
+    compCounter.textContent = '';   // 글자도 초기화
+
+    for (let i = 1; i <= 10; i++) {
+      const dan = Math.floor(Math.random() * 8) + 2;  // 2~9
+      const su  = Math.floor(Math.random() * 9) + 1;  // 1~9
+      const answer = dan * su;
+
+      const li = document.createElement('li');
+      li.className = 'flex_box';
+      li.innerHTML = `
+        <span class="num">${i}</span>
+        <div class="flex_box_moon">
+          <p class="moon">${dan} × ${su}</p>
+          <p>=</p>
+          <div class="write_box">
+            <input type="text" class="write" data-answer="${answer}">
+            <img src="../img/gugudan/checkbox.svg" alt="" class="checkbox" style="opacity:0;">
+          </div>
+        </div>
+      `;
+      quizList.appendChild(li);
+    }
+  }
+
+  // 정답 확인
+  function checkAnswers() {
+    const inputs = quizList.querySelectorAll('.write');
+    let correct = 0;
+
+    inputs.forEach(input => {
+      const userVal = input.value.trim();
+      const realAns = input.dataset.answer;
+      const img = input.nextElementSibling;
+
+      if (userVal !== '' && userVal === realAns) {
+        img.src = '../img/gugudan/checkbox.svg';
+        img.style.opacity = 1;
+        correct++;
+      } else {
+        img.src = '../img/gugudan/checkbox_fail.svg';
+        img.style.opacity = 1;
+      }
+    });
+
+    // 여기다가 표시
+    compCounter.textContent = `맞은 개수 : ${correct} / ${inputs.length}`;
+  }
+
+  problemBtn.addEventListener('click', makeProblems);
+  compBtn.addEventListener('click', checkAnswers);
+  </script>
+
 </body>
 </html>
