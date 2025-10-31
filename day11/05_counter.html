@@ -1,47 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1>span{
+            display: none;
+        }
+    </style>
 </head>
 <body>
-  <!-- 
-    버튼 2개 준비 
-    + 숫자 -
-    + : 값이 1씩 증가
-    - : 값이 1씩 감소 (값이 0이면 더이상 감소X)
-  -->
+    <!-- 
+        button 2개 준비
+        +  숫자  -
+        
+        + => 값이 1씩 증가
+        - => 값이 1씩 감소(값이 0이면 더이상 감소X)
 
+    -->
+        <h1 id="number">
+            0
+            <span >숨겨진 텍스트</span>
+        </h1>
+        <button type="button" id="incre"> + </button>
+        <button type="button" id="decre"> - </button>
 
-  <style>
-    button {outline: none; border:none; padding:12px 18px; border-radius: 6px; color:#fff; font-size:20px; font-weight: 700; cursor:pointer;}
-    #incre {background-color: royalblue; margin-right:30px;}
-    #decre {background-color: crimson;}
-    h1 {padding-left:50px; font-size:50px;}
+        <script>
+            const number = document.getElementById('number');
+            const incre = document.getElementById('incre');
+            const decre = document.getElementById('decre');
 
-  </style>
+            incre.addEventListener('click',()=>{
+                // 태그 안쪽 글자를 가져오는 방법 
+                // innerText : 보여지는 글자만 가져옴  
+                // textContent : display:none 글자도 가져옴
+                let currVal = Number(number.innerText);
+                console.log(number.innerHTML);
+                console.log(number.textContent);
 
-  <h1 id="num">0</h1>
+                number.innerText = currVal + 1;
 
-  <div>
-    <button type="button" id="incre" onclick="plus()"> + </button>
-    <button type="button" id="decre" onclick="minus()"> - </button>
-  </div>
+            })
 
+            decre.addEventListener('click',()=>{
+                let currVal = Number(number.innerText);
+                
+                if(currVal <=0 ){
+                    number.innerText = 0;
+                }else{
+                    number.innerText = currVal - 1;
+                }
+            })
 
-  <script>
-  function plus(){
-    num.innerText = +num.innerText + 1; 
-  }
-  
-  function minus(){ 
-    var n = +num.innerText; if(n>0) num.innerText = n - 1; 
-  }
-  </script>
-
-
+        </script>
 </body>
-
-
 </html>

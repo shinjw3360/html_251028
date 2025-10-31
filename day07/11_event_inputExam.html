@@ -1,71 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
-<style>
-  ul, li {
-    list-style: none;
-  }
-</style>
 <body>
-  <!-- 이름 국어 영어 수학 점수를 입력받고 계산버튼을 누르면 ul>li 점수를 출력하고 합계와 평균도 같이 출력-->
-  <ul>
-    <li>
-      <input type="text" id="name" placeholder="이름">
-    </li>
-    <li>
-      <input type="number" id="book" placeholder="국어">
-    </li>
-    <li>
-      <input type="number" id="eng" placeholder="영어" >
-    </li>
-    <li>
-      <input type="number" id="math" placeholder="수학" >
-    </li>
-    <li>
-      <button type="button" onclick="calc()">계산하기</button>
-    </li>
-  </ul>
-  
-  
+    <!-- 
+        이름, 국어, 영어, 수학 점수를 입력받고 계산 버튼을 누르면
+        ul>li 점수를 출력하고, 합계와, 평균도 같이 출력
+    -->
+    <!-- Number() : string을 숫자로 변경될수 있는 값 / 정수 + 실수 -->
+    <!-- parseInt() : 정수만 변경가능.  -->
+     <fieldset>
+        <legend>성적표</legend>
+        이름: <input type="text" id="name"> <br>
+        국어: <input type="text" id="kor"><br>
+        영어: <input type="text" id="eng"> <br>
+        수학: <input type="text" id="math"><br>
+        <button onclick="clickEvent()">성적계산</button>
+     </fieldset>
+     <ul id="ul"></ul>
 
-  <h1 id="total">총 점수 <span> </span></h1>
-  <h1 id="plus">합계 <span> </span></h1>
-  <h1 id="avg">평균 <span> </span></h1>
+     <script>
+        // const name = document.getElementById('name'); //객체 자체
+        function clickEvent(){
+            let name = document.getElementById('name').value; //객체의 value 값
+            let kor = Number(document.getElementById('kor').value);
+            let eng = Number(document.getElementById('eng').value);
+            let math = Number(document.getElementById('math').value);
 
+            let sum = kor + eng + math;
+            // 소수점 표시하는 방법 .toFixed(2) : 소수 2자리로 표현
+            // Math.round() : 반올림 후 정수로 리턴
+            let avg = (sum / 3).toFixed(2);
 
-<script>
-  function calc() {
-    const name = document.getElementById('name').value.trim();
-    const k = Number(document.getElementById('book').value);
-    const e = Number(document.getElementById('eng').value);
-    const m = Number(document.getElementById('math').value);
+            const ul = document.getElementById('ul');
+            console.log(ul);
 
-    if ([k, e, m].some(n => !Number.isFinite(n))) {
-      alert('점수는 숫자로 입력하세요.');
-      return;
-    }
+            let str = `<li>name:${name}</li>`;
+            str += `<li>kor:${kor}</li>`;
+            str += `<li>eng:${eng}</li>`;
+            str += `<li>math:${math}</li>`;
+            str += `<li>sum:${sum}</li>`;
+            str += `<li>avg:${avg}</li>`;
 
-    // 각 과목 1 ~ 100 범위 체크
-    for (const [label, n] of [['국어', k], ['영어', e], ['수학', m]]) {
-      if (n < 1 || n > 100) {
-        alert(`${label} 점수는 1부터 100 사이여야 합니다.`);
-        return;
-      }
-    } 
-    //소수점 표시하는 방법 .toFixed(2) : 소수 2자리로 표현
-    //Math.round() : 반올림 후 정수로 리턴
-      const sum = k + e + m;
-      const avg = (sum / 3).toFixed(2);
-      document.querySelector('#total span').textContent = sum;
-      document.querySelector('#plus span').textContent = sum;
-      document.querySelector('#avg  span').textContent = avg;
-    }
-</script>
+            ul.innerHTML = str;
 
-
+        }
+     </script>
 </body>
 </html>

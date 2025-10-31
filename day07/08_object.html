@@ -1,33 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
-
-<script>
-  //좋아하는 가수의 정보를 담은 객체 생성 => 출력
-  // name, age..,  playlist
-
-  const singer = {
-  name: '혜원',
-  age: 20,
-  playlist: ['주말이 싫어졌어']
-};
-
-  console.log(`가수: ${singer.name} (${singer.age}세)`);
-  console.log('플레이리스트:', singer.playlist.join(', '));
-
-
-
-</script>
-
-
 <body>
-  
+    <h1>
+        object(객체) : 식별할 수 있는 것을 상세 특징으로 표현하려한 형식
+    </h1>
+    <!-- 
+        - const 상수로 선언하는 것이 일반적 : 객체의 지속성을 확보하기 위함.
+        {} 안에 key : value
+         {
+            key : value,
+            key : value,
+            key : value
+         } 
+        - key 값은 같은 객체 내에서는 중복 안됨. (고유 키)
+        - value 는 중복가능.
+        - 객체 내부의 속성(value)의 값으로 사용할 수 있는 데이터 타입은
+          제한이 없음.
+        - key는 string
+        - value의 값으로 익명함수를 정의하면 그 함수를 메서드라고 부른다.
+        - key 값이 그 함수의 이름이 됨.
+    -->
+    
+    <script>
+        const car = {name:'myCar', year:2025};
+        // car = 100; // 불가능.
+        // 선언한 객체를 지킬 수 있음 - 지속성 확보
+
+        let myCar = {name:'myCar2', year:2025};
+        // myCar의 객체는 사라짐. - 객체를 선언하고 활용하려는 목적을 잃어버림.
+        myCar = 100; 
+    </script>
+    
+    <script>
+        const me = {
+            firstName: '홍',
+            lastName: "길동",
+            age: 20,
+            addr: 'seoul',
+            "hobby":"독서",
+            avail:{
+                year:2025,
+                title : 'javascript',
+                ver: 'ES6+',
+                project:'javaScaript project',
+                intro : function(){
+                    console.log('객체 내부에 선언된 함수');
+                    console.log(me.firstName);
+                    return `${this.title} : ${this.ver}`;
+                }
+            },
+            year:2022
+        };
+
+        console.log(me);
+        // 주소
+        console.log(me.addr);
+        console.log(me.avail.title);
+        console.log(me.avail.intro); // 실행이 아니라 지목
+        console.log(me.avail.intro()); // 실행 () invoke
+
+        console.log("------------------");
+        // 객체명.key => value 값을 리턴
+        let keyName = "age";
+        console.log(me[keyName]);
+        console.log(me["firstName"]); //me[keyString]
+        console.log(me.avail["title"]);
+        console.log(me["avail"]["title"]);
+        console.log(me["avail"].ver);
+        console.log(me["avail"]["intro"]());
+
+        console.log("------------------")
+    </script>
+    <script>
+        /* const me = {
+            firstName: '홍',
+            lastName: "길동",
+            age: 20,
+            addr: 'seoul',
+            "hobby":"독서",
+            avail:{
+                year:2025,
+                title : 'javascript',
+                ver: 'ES6+',
+                project:'javaScaript project',
+                intro : function(){
+                    console.log('객체 내부에 선언된 함수');
+                    return `${this.title} : ${this.ver}`;
+                }
+            },
+            year:2022
+        };
+        */
+        // 좋아하는 가수의 정보를 담은 객체 생성 => 출력
+        // name, age.., playlist:{ , , }, jukebox( playlist 콘솔출력 함수) 
+        const musician = {
+            name:"IU",
+            age:20,
+            addr:'seoul',
+            playList:{
+                first:'너랑나',
+                second:'좋은날',
+                third:'밤편지'
+            },
+            jukeBox: function(p1,p2,p3){
+                console.log(p1, p2, p3);
+                console.log(this.playList.first, this.playList.second, musician.playList.third);
+            }
+        }
+        // '[{},{},{},{}]'
+        let p1 = '어푸';
+        let p2 = '라일락';
+        let p3 = '후라이의꿈';
+        console.log(musician.name + "("+musician.age+")");
+        musician.jukeBox(p1,p2,p3);
 
 
-
+    </script>
 </body>
 </html>

@@ -1,86 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
-
-<!-- 
-  set을 생성해서 1~45까지 랜덤수 6개 중복되지 않게 추출 => 출력
-  set 중복제거 후 => 배열
--->
-
-<style>
-  button {
-    outline: none;
-    border:none;
-    background-color: orangered;
-    cursor:pointer;
-    font-size:16px;
-    font-weight: 700;
-    color:#fff;
-    padding:12px;
-    border-radius: 8px;
-  }
-
-</style>
-
 <body>
-  <button type="type" id="makeRandom" onclick="make_random()">랜덤번호 6자리 생성</button>
-  <h1 id="printNum">로또번호 출력</h1>
-  
-  <button type="button" id="makeRandom2" onclick="make_random2()">당첨번호 7자리 생성(출력)</button>
-  <h1 id="printNum2">당첨번호 출력</h1>
+    <h1>
+        set을 이용한 로또 만들기
+    </h1>
+    <!-- 
+        1~45까지 랜덤수 6개 중복되지 않게 추출 => 출력
+        set 중복제거 후 => 배열
+    -->
+    <button id="makeRandom">랜덤번호 6자리 생성(출력)</button>
+    <h1 id="printNum">로또번호 출력</h1>
 
-  <button type="button" id="ranking" onclick="ranking()">당첨 확인</button>
-  <h1 class="printResult" id="printResult">당첨여부 출력</h1>
+    <button id="makeRandom2">당첨번호 7자리 생성(출력)</button>
+    <h1 id="printNum2">당첨번호 출력</h1>
 
+    <button id="ranking">당첨 확인</button>
+    <h3 id="printResult">당첨여부 출력</h3>
 
-  <script>
-    let step = 0, mine = [], win = [];
-  
-    function uniq(n, m, k){
-      const s = new Set();
-      while (s.size < k) s.add(Math.floor(Math.random()*(m-n+1))+n);
-      return [...s].sort((a,b)=>a-b);
-    }
-  
-    function make_random(){
-      // 매 클릭마다 새 번호 생성
-      mine = uniq(1,45,6);
-      document.getElementById('printNum').innerText = '내 번호: ' + mine.join(', ');
-  
-      // 2, 3단계 초기화(다시 진행해야 함)
-      win = [];
-      document.getElementById('printNum2').innerText = '당첨 번호';
-      document.getElementById('printResult').innerText = '결과';
-  
-      document.getElementById('makeRandom2').disabled = false; // 2단계 가능
-      document.getElementById('ranking').disabled = true;  // 3단계 막기
-      step = 1;
-    }
-  
-    function make_random2(){
-      if (step !== 1) { alert('먼저 로또번호(1단계)를 생성하세요.'); return; }
-      win = uniq(1,45,7);
-      document.getElementById('printNum2').innerText = '당첨 번호(보너스 포함): ' + win.join(', ');
-      document.getElementById('ranking').disabled = false;
-      step = 2;
-    }
-  
-    function ranking(){
-      if (step !== 2) { alert('로또번호와 당첨번호를 먼저 확인하세요.'); return; }
-      const base = win.slice(0,6), bonus = win[6];
-      const match = mine.filter(x => base.includes(x)).length;
-      let result =
-        match===6 ? '1등!' :
-        (match===5 && mine.includes(bonus)) ? '2등!' :
-        match===5 ? '3등' :
-        match===4 ? '4등' :
-        match===3 ? '5등' : '꽝';
-      document.getElementById('printResult').innerText = `일치 ${match}개 → ${result}`;
-    }
-  </script>
+    <script>
+       // 1~45까지 6자리 : 사용자번호
+       const lottoArr = [];
+       // 1~45까지 7자리 (6자리 + 보너스) : 당첨번호 
+       const rNumArr = [];
+       let bonus = 0; // 보너스 번호 넣는 용도
+
+       document.getElementById('makeRandom').addEventListener('click',()=>{
+        // 기존 배열에 값이 있다면 값 지우기  
+        // set.clear()  : set 비우기
+        // splice(index, count) : index부터 count개 만큼 삭제 하고, 다른 내용으로 교체 변경
+        lottoArr.splice(0); // 0부터 끝까지 삭제
+        randomNum(lottoArr, 6);
+        document.getElementById('printNum').innerText = lottoArr;
+       });
+
+       document.getElementById('makeRandom2').addEventListener('click',()=>{
+        rNumArr.splice(0);
+        randomNum(rNumArr,7);
+        // 보너스 번호 추출
+        bonus = rNumArr.pop();
+        document.getElementById('printNum2').innerText = `${rNumArr} [${bonus}]`;
+       });
+
+       document.getElementById('ranking').addEventListener('click', ranking);
+
+       function ranking(){
+        let cnt=0;
+        lottoArr.forEach(v =>{
+            if(rNumArr.includes(v)){
+                cnt++;
+            }
+        });
+        console.log(cnt);
+
+        let print='';
+        switch(cnt){
+            case 6: print='축~! 1등!!'; break;
+            case 5: 
+                lottoArr.includes(bonus) ? print='축! 2등!!' 
+                    : print = '축! 3등!!';
+                break;
+            case 4: print='축! 4등!!'; break;
+            case 3: print='축! 5등!!'; break;
+            default: print = '꽝!!'; break;
+        }
+        document.getElementById('printResult').innerText = print;
+       }
+
+       function randomNum(arr, num){
+        const set = new Set();
+        while(set.size < num){
+            let num = Math.floor(Math.random()*10)+1;
+            set.add(num);
+        }
+        set.forEach(v => arr.push(v));
+       }
+    </script>
 </body>
 </html>

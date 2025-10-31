@@ -1,45 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
-  숫자 : <input type="text" id="number" placeholder="숫자를 입력하세요"> 
-  <button type="button" id="printBtn" onclick="printBtn()">출력</button>
-  <h3 id="printResult"> </h3>
-  
+    숫자 : <input type="text" id="number">
+    <button id="printBtn">print</button>
+    <h3 id="printResult"></h3>
 
-  <script>
-    /*
-      조건 : input 숫자만 들어올 수 있게 try ~ catch로 체크
-            숫자가 아니면 printResult = '숫자만 입력해주세요' throw로 에러처리
-            숫자면 입력된 숫자값에 *2 결과를 printResult 출력
-    */
+    <script>
+        // input 숫자만 들어올 수 있게 try~catch로 체크
+        // 숫자가 아니면 printResult='숫자만 입력해주세요' throw로 에러 처리.
+        // 숫자면 입력된 숫자값에 *2 결과를 printResult 출력
+        document.getElementById('printBtn').addEventListener('click',()=>{
+            console.log('시작~!!');
 
-  const num_write = document.getElementById('number');
-  const btn = document.getElementById('printBtn');
-  const result = document.getElementById('printResult');
+            const printResult = document.getElementById('printResult');
+            let number = document.getElementById('number').value;
 
-  function printBtn() {
-    try {
-      const value = num_write.value.trim();  // 입력값
-      if (value === '') {
-        throw '숫자만 입력해주세요';
-      }
+            try{
+                if(isNaN(number)){
+                    throw new Error('숫자만 입력가능합니다.!!');
+                }
+                number = Number(number)*2;
+                printResult.innerText = number;
+            }catch(error){
+                console.log(error);
+                printResult.innerText = error.message;
+            }
+            console.log('종료!!');
+        });
 
-      const n = Number(value);
-
-      if (isNaN(n)) {
-        throw '숫자만 입력해주세요';
-      }
-
-      result.textContent = n * 2;
-    } catch (error) {
-      result.textContent = error;  // '숫자만 입력해주세요'
-    }
-  }
-  </script>
+    </script>
 </body>
 </html>

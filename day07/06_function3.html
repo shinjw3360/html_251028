@@ -1,34 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
-  <!-- 
-    파라미터의 개수는 제한이 없으나 많으면 관리가 힘듬
-    파라미터의 타입도 제한이 없음. 전달되는 그대로 사용
-    파라미터의 변수명은 외부 변수명과 같아도 달라도 상관이 없음
-    return 유무에 따라 값을 리턴 받을수도 있고, 그냥 종료가능
-    return 종료 시점을 결정
-  
-  -->
-  
-  <!-- 함수 생성 -->
-  
-
 <body>
-  <script>
-    // 함수생성
-    // 파라미터로 이름과 취미를 받아서 콘솔에 출력
-    // 홍길동은 독서를 좋아합니다.
+    <script>
+        function divFunc(p1,p2){
+            return p1/ p2;
+        }
+        function mulFunc(p1,p2){
+            return divFunc(p1,p2);
+        }
+        function subFunc(p1,p2){
+            return mulFunc(p1,p2);
+        }
+        function sumFunc(p1,p2){
+            return subFunc(p1,p2);
+        }
 
-    function printHobby(name, hobby) {
-      console.log(`${name}은 ${hobby}를 좋아합니다.`);
-    }
+        const result = sumFunc(10, 20);
+        console.log(result);
 
-    printHobby('홍길동', '독서');
 
-  </script>
+        function myfuncOld(myFuncParam){
+            console.log('myfuncOld function');
+            return `Hello~!! ${myFuncParam}`;
+        }
+
+        const myFunc = function(myName){
+            console.log('myfunc function');
+            return `Hello~!! ${myName}`;
+        }
+        console.log(myfuncOld('홍길동'));
+        console.log(myFunc('홍길동'));
+
+        console.log(myfuncOld(myFunc));
+        
+    </script>
 </body>
 </html>

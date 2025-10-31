@@ -1,3 +1,7 @@
-// console.log("외부 스크립트에서 작성")
+console.log("외부 스크립트 파일에서 작성");
 
-/* num1, num2 두 수를 파라미터로 받아 두수의 함을 콘설에 출력하는 함수 생성 = > 호출 */ 
+let name3 = 'hong';
+
+function mySecondFunc(){
+    console.log("외부파일에서 만든 함수");
+}

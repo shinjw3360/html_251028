@@ -1,35 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
-  <fieldset>
-    <legend>생년월일 확인</legend>
-    이름 : <input type="text" id="name">
-    주민번호 : <input type="text" id="rNum">
-    <button type="button" id="btn">확인</button>
-    <h3 id="result"></h3>
-  </fieldset>
+    <fieldset>
+        <legend>생년월일 확인</legend>
+        이름 : <input type="text" id="name"> <br>
+        주민번호 : <input type="text" id="rNum"> <br>
+        <button type="button" id="btn">확인</button>
+        <!-- 이름, 생년월일, 나이, 성별 출력 -->
+        <h3 id="result"></h3>
+    </fieldset>
 
-  <script>
-    document.getElementById("btn").addEventListener('click',btn);
-    function btn() {
-      const name = document.getElementById("name").value;
-      const rNum = document.getElementById("rNum").value;
+    <script>
 
-      const result = `${name}은 ${rNum} 입니다.`;
+        document.getElementById('btn').addEventListener('click',()=>{
+            const result = document.getElementById('result');
+            let name = document.getElementById('name').value;
+            let rNum = document.getElementById('rNum').value;
 
-      const today = new Date();
-      const rNum_year = today.toLocaleDateString();
+            // 010101-3123456
+            // 생년월일, 나이, 성별
+            let birth = rNum.substring(0,6);
+            console.log(birth);
+            let getNum = rNum.charAt(6);
+            // 성별
+            let gender = (getNum =='1' || getNum =='3') ? '남' : '여';
+            console.log(gender);
 
-      document.getElementById("result").innerText = `${result} (${rNum_year})`;
-    }
+            //나이  오늘날짜연도 - 태어난 연도   2001 (3,4)  1997 (1,2)
+            const today = new Date();
+            let todayYear = today.getFullYear();
+            let birthYear = Number(birth.substring(0,2));
+            let age = getNum <= 2 ? todayYear - (1900+birthYear) : 
+            todayYear - (2000+birthYear);
+            console.log(age);
 
-  </script>
-
-
+            result.innerText = `이름:${name}, 생년월일:${birth}, 나이:${age}, 성별:${gender}`;
+            
+        })
+    </script>
 </body>
 </html>

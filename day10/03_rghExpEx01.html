@@ -1,51 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .green{
+            color: green;
+        }
+        .red{
+            color: red;
+        }
+    </style>
 </head>
-
-<style>
-  .result {
-    color:red;
-  }
-
-  .result_no {
-    color:green;
-  }
-
-</style>
-
-
-
-
 <body>
-  파일명 : <input type="text" id="fileName">
-  <button type="button" id="btn" onclick="btn()">확인</button>
-  <h3 id="result"> </h3>
+    파일명 : <input type="text" id="fileName">
+    <button type="button" id="btn">확인</button>
+    <h3 id="result"></h3>
+
+    <script>
+        // input 태그에 파일명.확장자 형태로 입력하여 확인버튼을 클릭하면
+        // 이미지 파일인지 아닌지 검사
+        // 이미지 파일이면 '정상파일입니다.' - green
+        // 아니면 '이미지파일만 가능합니다.' - red
+        // /\.(jpg|gif|png|jpeg)$/i
+
+        document.getElementById('btn').addEventListener('click',()=>{
+            const fileName = document.getElementById('fileName').value;
+            
+            let imgTrue = `<span class="green">정상파일입니다.</span>`;
+            let imgFalse = `<span class="red">이미지파일만 가능합니다.</span>`;
+
+            document.getElementById('result').innerHTML = 
+            imageVaild(fileName) ? imgTrue : imgFalse;
+
+        });
+
+        // vaildtion
+        function imageVaild(imageFile) {
+            console.log(imageFile);
+            const regex = /\.(jpg|gif|png|jpeg)$/i;
+            
+            if(imageFile.match(regex)){
+                return true;
+            }
+            return false;
+        }
 
 
-  <script>
-    function btn(){
-      const type = document.getElementById('fileName').value.trim();
-      const img = /\.(jpg|png|gif|webp|svg|)$/i.test(type);
-      const result = document.getElementById('result');
-      
-      if(type == "") {
-        alert('확장자명을 입력하세요.');
-      }
-      
-      else if (img) {
-        result.className = 'result';
-        result.textContent = '이미지 파일입니다';
-      } 
-      
-      else {
-        result.className = 'result_no';
-        result.textContent = '이미지 파일이 아닙니다';
-      }
-    }
+
     </script>
 </body>
 </html>
