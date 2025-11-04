@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+  <style>
+    * {margin:0; padding:0;}
+    body {box-sizing: border-box;}
+    ul, li {list-style: none;}
+    .tarvel_list li {border:1px solid #ededed; padding:12px; border-radius: 10px; cursor:pointer;}
+    .tarvel_list li.active {border:none; background-color: crimson; color:#fff; border:1px solid crimson; font-weight: 700;}
+    .tarvel_list {display: flex; align-items: center; justify-content: center;  font-size:16px; gap:10px; }
+    .wrap {width:100%; max-width:600px; margin:0 auto;}
+    h1 {text-align: center; margin:40px 0; }
+    .img_view {width:100%; overflow: hidden; border-radius: 10px; margin-top:20px;}
+    .img_view img {max-width:100%;}
+    .me {text-align: right; color:blueviolet; font-weight: 700; font-size:20px; margin-top:20px;}
+  </style>
+
+<body>
+  <div class="wrap">
+    <h1>Travel</h1>
+    <ul class="tarvel_list">
+      <li class="active">HOME</li>
+      <li>Seoul</li>
+      <li>Tokyo</li>
+      <li>Paris</li>
+    </ul>
+    
+    <div class="img_view">
+      <img src="../img/travel/plane.jpg" alt="imgTag" id="img">
+    </div>
+
+    <p class="me">PS.나도 여행 떠나고 싶다.</p>
+  </div>
+
+
+  <script>
+  const list = document.querySelector('.tarvel_list');
+  const img  = document.getElementById('img');
+  
+  const srcMap = {
+    'HOME':  '../img/travel/plane.jpg',
+    'Seoul': '../img/travel/gyeongbok.jpg',
+    'Tokyo': '../img/travel/toyo.jpg',
+    'Paris': '../img/travel/paris.jpg'
+  };
+
+  list.addEventListener('click', (e) => {
+    if (e.target.tagName !== 'LI') return;
+
+    const key = e.target.textContent.trim();
+    const nextSrc = srcMap[key];
+    if (!nextSrc) return;
+
+    img.src = nextSrc;
+    img.alt = key;
+    [...list.children].forEach(li => li.classList.remove('active'));
+    e.target.classList.add('active');
+  });
+  </script>
+</body>
+</html>
